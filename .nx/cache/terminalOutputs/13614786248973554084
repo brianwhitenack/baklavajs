@@ -1,0 +1,114 @@
+Building classic
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ╷
+1 │ @import "./variables";
+  │         ^^^^^^^^^^^^^
+  ╵
+    src\classic\all.scss 1:9  root stylesheet
+
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ╷
+2 │ @import "./styles";
+  │         ^^^^^^^^^^
+  ╵
+    src\classic\all.scss 2:9  root stylesheet
+
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ╷
+1 │ @import "./atoms/atoms";
+  │         ^^^^^^^^^^^^^^^
+  ╵
+    src\classic\styles.scss 1:9  @import
+    src\classic\all.scss 2:9     root stylesheet
+
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ╷
+2 │ @import "./components/components";
+  │         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  ╵
+    src\classic\styles.scss 2:9  @import
+    src\classic\all.scss 2:9     root stylesheet
+
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ╷
+4 │ @import "./animations";
+  │         ^^^^^^^^^^^^^^
+  ╵
+    src\classic\styles.scss 4:9  @import
+    src\classic\all.scss 2:9     root stylesheet
+
+WARNING: 16 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+
+Building syrup-dark
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ╷
+1 │ @import "./variables";
+  │         ^^^^^^^^^^^^^
+  ╵
+    src\syrup-dark\all.scss 1:9  root stylesheet
+
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ╷
+2 │ @import "../classic/styles";
+  │         ^^^^^^^^^^^^^^^^^^^
+  ╵
+    src\syrup-dark\all.scss 2:9  root stylesheet
+
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ╷
+1 │ @import "./atoms/atoms";
+  │         ^^^^^^^^^^^^^^^
+  ╵
+    src\classic\styles.scss 1:9  @import
+    src\syrup-dark\all.scss 2:9  root stylesheet
+
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ╷
+2 │ @import "./components/components";
+  │         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  ╵
+    src\classic\styles.scss 2:9  @import
+    src\syrup-dark\all.scss 2:9  root stylesheet
+
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ╷
+4 │ @import "./animations";
+  │         ^^^^^^^^^^^^^^
+  ╵
+    src\classic\styles.scss 4:9  @import
+    src\syrup-dark\all.scss 2:9  root stylesheet
+
+WARNING: 16 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(yarn install)",
+      "Bash(yarn run:*)",
+      "Bash(yarn build)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

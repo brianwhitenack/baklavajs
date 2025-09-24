@@ -1,0 +1,1240 @@
+{
+  "version": "6.0",
+  "nxVersion": "20.8.2",
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": "docs/example.png",
+        "hash": "1147236495468861633"
+      },
+      {
+        "file": "docs/execution/setup.md",
+        "hash": "3607498252851862480"
+      },
+      {
+        "file": ".claude/settings.local.json",
+        "hash": "4877107714012746242"
+      },
+      {
+        "file": "yarn.lock",
+        "hash": "3843183058284376716"
+      },
+      {
+        "file": "docs/execution/node_execution_order.png",
+        "hash": "18332911462631006304"
+      },
+      {
+        "file": ".vs/Baklava/CopilotIndices/17.14.995.13737/SemanticSymbols.db-shm",
+        "hash": "17759390010362296800"
+      },
+      {
+        "file": "typedoc.json",
+        "hash": "15408205983802097421"
+      },
+      {
+        "file": "typedoc.tsconfig.json",
+        "hash": "1636898606255526290"
+      },
+      {
+        "file": ".github/workflows/publish.yml",
+        "hash": "4119723138467870621"
+      },
+      {
+        "file": "LICENSE",
+        "hash": "16761578319427692655"
+      },
+      {
+        "file": "package.json",
+        "hash": "555087062042578380"
+      },
+      {
+        "file": ".vs/ProjectSettings.json",
+        "hash": "10175589240379181388"
+      },
+      {
+        "file": "docs/editor/saving-loading.md",
+        "hash": "10885661933563796432"
+      },
+      {
+        "file": ".yarnrc.yml",
+        "hash": "7832837580102605934"
+      },
+      {
+        "file": "docs/components/ApiLink.vue",
+        "hash": "8282494180503885835"
+      },
+      {
+        "file": "docs/components/Mermaid.vue",
+        "hash": "1843284073548282811"
+      },
+      {
+        "file": ".vs/Baklava/v17/.wsuo",
+        "hash": "16214950179642482472"
+      },
+      {
+        "file": ".yarn/releases/yarn-3.5.1.cjs",
+        "hash": "9368438466464135992"
+      },
+      {
+        "file": "docs/nodes/interfaces.md",
+        "hash": "11613762565126577762"
+      },
+      {
+        "file": "lerna.json",
+        "hash": "8053418040967188766"
+      },
+      {
+        "file": ".vs/Baklava/CopilotIndices/17.14.995.13737/CodeChunks.db-wal",
+        "hash": "5845259818981177675"
+      },
+      {
+        "file": ".vs/slnx.sqlite",
+        "hash": "12485069080536535968"
+      },
+      {
+        "file": ".vs/Baklava/CopilotIndices/17.14.995.13737/SemanticSymbols.db-wal",
+        "hash": "16830890538761675660"
+      },
+      {
+        "file": "docs/.vitepress/config.mts",
+        "hash": "13791442356699939184"
+      },
+      {
+        "file": "docs/components/StaticLink.ts",
+        "hash": "347722032075675563"
+      },
+      {
+        "file": "docs/visual-editor/toolbar.md",
+        "hash": "3823161570137883649"
+      },
+      {
+        "file": "docs/editor/subgraphs.md",
+        "hash": "15486341230917231088"
+      },
+      {
+        "file": "README.md",
+        "hash": "8954602036686021647"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "9223497768957974986"
+      },
+      {
+        "file": ".github/workflows/build.yml",
+        "hash": "2187752539828103608"
+      },
+      {
+        "file": ".vs/Baklava/v17/DocumentLayout.json",
+        "hash": "16785077681865530591"
+      },
+      {
+        "file": ".vs/VSWorkspaceState.json",
+        "hash": "5077205391380866407"
+      },
+      {
+        "file": "docs/event-system.md",
+        "hash": "11321934646594555339"
+      },
+      {
+        "file": "docs/getting-started.md",
+        "hash": "7639405700790330078"
+      },
+      {
+        "file": "docs/nodes/dynamic-nodes.md",
+        "hash": "13792388635456117588"
+      },
+      {
+        "file": "docs/visual-editor/setup.md",
+        "hash": "5309167176679407430"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "11280958410288792207"
+      },
+      {
+        "file": "docs/index.md",
+        "hash": "15625771141901577456"
+      },
+      {
+        "file": ".yarn/plugins/@yarnpkg/plugin-interactive-tools.cjs",
+        "hash": "11351481332908077947"
+      },
+      {
+        "file": ".github/FUNDING.yml",
+        "hash": "5795575735632980912"
+      },
+      {
+        "file": "eslint.config.js",
+        "hash": "2815682342398140742"
+      },
+      {
+        "file": "docs/browser-build.md",
+        "hash": "10998273684714680090"
+      },
+      {
+        "file": ".vs/Baklava/CopilotIndices/17.14.995.13737/CodeChunks.db",
+        "hash": "4276333223729290817"
+      },
+      {
+        "file": "nx.json",
+        "hash": "12514843235684247328"
+      },
+      {
+        "file": "docs/migration.md",
+        "hash": "7769437297146962596"
+      },
+      {
+        "file": "docs/nodes/nodes.md",
+        "hash": "6962646142962071209"
+      },
+      {
+        "file": "tsconfig.eslint.json",
+        "hash": "5182529439815900043"
+      },
+      {
+        "file": ".vs/Baklava/CopilotIndices/17.14.995.13737/CodeChunks.db-shm",
+        "hash": "6288450356118918265"
+      },
+      {
+        "file": "docs/visual-editor/sidebar.md",
+        "hash": "10577351220116160346"
+      },
+      {
+        "file": ".vs/Baklava/CopilotIndices/17.14.995.13737/SemanticSymbols.db",
+        "hash": "12855255045466737836"
+      },
+      {
+        "file": "docs/editor/registering-nodes.md",
+        "hash": "15167664530716151079"
+      },
+      {
+        "file": "docs/public/ts.svg",
+        "hash": "16494774931035784189"
+      },
+      {
+        "file": "docs/execution/forward.md",
+        "hash": "7662230239160539309"
+      },
+      {
+        "file": "docs/visual-editor/customization.md",
+        "hash": "15884941172594953493"
+      },
+      {
+        "file": "docs/nodes/interface-types.md",
+        "hash": "15586176921852138351"
+      },
+      {
+        "file": "docs/nodes/lifecycle.md",
+        "hash": "4995559599424834433"
+      },
+      {
+        "file": "docs/core-concepts.md",
+        "hash": "16754947421297269443"
+      },
+      {
+        "file": "docs/execution/dependency.md",
+        "hash": "13225858510135007468"
+      },
+      {
+        "file": "docs/nodes/pre-defined-interfaces.md",
+        "hash": "12314778386774580052"
+      },
+      {
+        "file": ".github/workflows/deploy-beta.yml",
+        "hash": "2594678010821434982"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "12114176389530025037"
+      },
+      {
+        "file": "docs/visual-editor/commands.md",
+        "hash": "2237094905534043844"
+      },
+      {
+        "file": ".github/workflows/manual-docs-publish.yml",
+        "hash": "4686089876110143312"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "13487273922934419238"
+      }
+    ],
+    "projectFileMap": {
+      "@baklavajs/interface-types": [
+        {
+          "file": "packages/interface-types/README.md",
+          "hash": "9451030871188939762"
+        },
+        {
+          "file": "packages/interface-types/jest.config.js",
+          "hash": "14968890834501451808"
+        },
+        {
+          "file": "packages/interface-types/package.json",
+          "hash": "7149321447659199093",
+          "deps": [
+            "npm:@types/jest",
+            "npm:jest",
+            "npm:rimraf",
+            "npm:ts-jest",
+            "npm:ts-node",
+            "npm:typescript",
+            "@baklavajs/core",
+            "@baklavajs/engine",
+            "@baklavajs/renderer-vue"
+          ]
+        },
+        {
+          "file": "packages/interface-types/src/index.ts",
+          "hash": "439987139697017155"
+        },
+        {
+          "file": "packages/interface-types/src/overrides.ts",
+          "hash": "10408238840263733193"
+        },
+        {
+          "file": "packages/interface-types/test/index.spec.ts",
+          "hash": "7480071138725112677"
+        },
+        {
+          "file": "packages/interface-types/tsconfig.build.json",
+          "hash": "8050239860691190118"
+        },
+        {
+          "file": "packages/interface-types/tsconfig.json",
+          "hash": "14789797149990272211"
+        }
+      ],
+      "@baklavajs/events": [
+        {
+          "file": "packages/events/README.md",
+          "hash": "1028931428784994486"
+        },
+        {
+          "file": "packages/events/package.json",
+          "hash": "9337893772996900245",
+          "deps": [
+            "npm:typescript"
+          ]
+        },
+        {
+          "file": "packages/events/src/event.ts",
+          "hash": "11245131571949959055"
+        },
+        {
+          "file": "packages/events/src/hook.ts",
+          "hash": "10138214261000783864"
+        },
+        {
+          "file": "packages/events/src/index.ts",
+          "hash": "8565136861963193169"
+        },
+        {
+          "file": "packages/events/src/proxy.ts",
+          "hash": "17982762849652482156"
+        },
+        {
+          "file": "packages/events/src/subscribable.ts",
+          "hash": "5694765993371736696"
+        },
+        {
+          "file": "packages/events/src/types.ts",
+          "hash": "1508461433720788372"
+        },
+        {
+          "file": "packages/events/tsconfig.json",
+          "hash": "1985350705841408165"
+        }
+      ],
+      "@baklavajs/renderer-vue": [
+        {
+          "file": "packages/renderer-vue/README.md",
+          "hash": "9451030871188939762"
+        },
+        {
+          "file": "packages/renderer-vue/index.html",
+          "hash": "7616328465389356517"
+        },
+        {
+          "file": "packages/renderer-vue/package.json",
+          "hash": "9812177236855953497",
+          "deps": [
+            "npm:@types/resize-observer-browser",
+            "npm:@vitejs/plugin-vue",
+            "npm:@vue/compiler-sfc",
+            "npm:@vueuse/core",
+            "npm:rimraf",
+            "npm:rollup-plugin-peer-deps-external",
+            "npm:rollup-plugin-visualizer",
+            "npm:rollup-plugin-vue",
+            "npm:sass",
+            "npm:typescript",
+            "npm:vite",
+            "npm:vite-plugin-dts",
+            "npm:vue",
+            "npm:vue-tsc",
+            "@baklavajs/core",
+            "@baklavajs/events"
+          ]
+        },
+        {
+          "file": "packages/renderer-vue/playground/AdvancedNode.ts",
+          "hash": "8373082035435711092"
+        },
+        {
+          "file": "packages/renderer-vue/playground/App.vue",
+          "hash": "16650288922110548879"
+        },
+        {
+          "file": "packages/renderer-vue/playground/BuilderTestNode.ts",
+          "hash": "14211585864339355824"
+        },
+        {
+          "file": "packages/renderer-vue/playground/CommentNode.ts",
+          "hash": "4387800136349958574"
+        },
+        {
+          "file": "packages/renderer-vue/playground/CommentNodeRenderer.vue",
+          "hash": "7815689992959834384"
+        },
+        {
+          "file": "packages/renderer-vue/playground/DialogNode.ts",
+          "hash": "12428368798283242732"
+        },
+        {
+          "file": "packages/renderer-vue/playground/DynamicNode.ts",
+          "hash": "8164376306165556473"
+        },
+        {
+          "file": "packages/renderer-vue/playground/InterfaceTestNode.ts",
+          "hash": "12546287060213201586"
+        },
+        {
+          "file": "packages/renderer-vue/playground/MathNode.ts",
+          "hash": "8590986447324219940"
+        },
+        {
+          "file": "packages/renderer-vue/playground/MultiInputNode.ts",
+          "hash": "5803392845881390634"
+        },
+        {
+          "file": "packages/renderer-vue/playground/OutputNode.ts",
+          "hash": "9949364931973294261"
+        },
+        {
+          "file": "packages/renderer-vue/playground/ReactiveOutputTest.vue",
+          "hash": "17519410775727716185"
+        },
+        {
+          "file": "packages/renderer-vue/playground/ReactiveOutputTestNode.ts",
+          "hash": "11944103458249278326"
+        },
+        {
+          "file": "packages/renderer-vue/playground/SelectTestNode.ts",
+          "hash": "7037243365049985371"
+        },
+        {
+          "file": "packages/renderer-vue/playground/SidebarButton.vue",
+          "hash": "5781258662677649417"
+        },
+        {
+          "file": "packages/renderer-vue/playground/SidebarNode.ts",
+          "hash": "6627889334332710945"
+        },
+        {
+          "file": "packages/renderer-vue/playground/TestNode.ts",
+          "hash": "13344966328484751368"
+        },
+        {
+          "file": "packages/renderer-vue/playground/UpdateTestNode.ts",
+          "hash": "15655093109538090460"
+        },
+        {
+          "file": "packages/renderer-vue/playground/interfaceTypes.css",
+          "hash": "5528993312178472984"
+        },
+        {
+          "file": "packages/renderer-vue/playground/interfaceTypes.ts",
+          "hash": "9238199088111774857"
+        },
+        {
+          "file": "packages/renderer-vue/playground/main.ts",
+          "hash": "18017448964315116744"
+        },
+        {
+          "file": "packages/renderer-vue/playground/test.css",
+          "hash": "7035117329350796455"
+        },
+        {
+          "file": "packages/renderer-vue/playground/tsconfig.json",
+          "hash": "11376592008401918092"
+        },
+        {
+          "file": "packages/renderer-vue/src/clipboard.ts",
+          "hash": "15349291188106449194"
+        },
+        {
+          "file": "packages/renderer-vue/src/commandList.ts",
+          "hash": "9897985158551405625"
+        },
+        {
+          "file": "packages/renderer-vue/src/commands/command.ts",
+          "hash": "8316659343431714270"
+        },
+        {
+          "file": "packages/renderer-vue/src/commands/hotkeyHandler.ts",
+          "hash": "334822230520571364"
+        },
+        {
+          "file": "packages/renderer-vue/src/commands/index.ts",
+          "hash": "6744078909262221797"
+        },
+        {
+          "file": "packages/renderer-vue/src/components.ts",
+          "hash": "1885172114281200106"
+        },
+        {
+          "file": "packages/renderer-vue/src/components/Minimap.vue",
+          "hash": "8903103261665728972"
+        },
+        {
+          "file": "packages/renderer-vue/src/connection/ConnectionView.vue",
+          "hash": "1007318106774949839"
+        },
+        {
+          "file": "packages/renderer-vue/src/connection/ConnectionWrapper.vue",
+          "hash": "15206636733648026552"
+        },
+        {
+          "file": "packages/renderer-vue/src/connection/TemporaryConnection.vue",
+          "hash": "14753245941485557373"
+        },
+        {
+          "file": "packages/renderer-vue/src/connection/connection.ts",
+          "hash": "6769233062577173299"
+        },
+        {
+          "file": "packages/renderer-vue/src/connection/domResolver.ts",
+          "hash": "11518374948653652226"
+        },
+        {
+          "file": "packages/renderer-vue/src/connection/index.ts",
+          "hash": "7054248986653489882"
+        },
+        {
+          "file": "packages/renderer-vue/src/connection/portCoordinates.ts",
+          "hash": "7072048819376129428"
+        },
+        {
+          "file": "packages/renderer-vue/src/contextmenu/ContextMenu.vue",
+          "hash": "8383032801629788602"
+        },
+        {
+          "file": "packages/renderer-vue/src/contextmenu/index.ts",
+          "hash": "17786179377709850145"
+        },
+        {
+          "file": "packages/renderer-vue/src/contextmenu/types.ts",
+          "hash": "12751178010128236793"
+        },
+        {
+          "file": "packages/renderer-vue/src/editor/Background.vue",
+          "hash": "17788040290123356791"
+        },
+        {
+          "file": "packages/renderer-vue/src/editor/Editor.vue",
+          "hash": "5806105076264589666"
+        },
+        {
+          "file": "packages/renderer-vue/src/editor/contextMenu.ts",
+          "hash": "1784818146661509231"
+        },
+        {
+          "file": "packages/renderer-vue/src/editor/index.ts",
+          "hash": "9055795855682432034"
+        },
+        {
+          "file": "packages/renderer-vue/src/editor/panZoom.ts",
+          "hash": "5366581800239434361"
+        },
+        {
+          "file": "packages/renderer-vue/src/editor/selectionBox.ts",
+          "hash": "13195671169615249380"
+        },
+        {
+          "file": "packages/renderer-vue/src/editor/temporaryConnection.ts",
+          "hash": "8108575052331501015"
+        },
+        {
+          "file": "packages/renderer-vue/src/graph/createSubgraph.command.ts",
+          "hash": "13967645804402526488"
+        },
+        {
+          "file": "packages/renderer-vue/src/graph/deleteNodes.command.ts",
+          "hash": "17395248673582674738"
+        },
+        {
+          "file": "packages/renderer-vue/src/graph/index.ts",
+          "hash": "15876701552422332341"
+        },
+        {
+          "file": "packages/renderer-vue/src/graph/saveSubgraph.command.ts",
+          "hash": "3183084616635877237"
+        },
+        {
+          "file": "packages/renderer-vue/src/graph/subgraphInterfaceNodes.ts",
+          "hash": "18415566371397857403"
+        },
+        {
+          "file": "packages/renderer-vue/src/graph/switchGraph.ts",
+          "hash": "18096973335892036436"
+        },
+        {
+          "file": "packages/renderer-vue/src/graph/switchToMainGraph.command.ts",
+          "hash": "13732885285924160473"
+        },
+        {
+          "file": "packages/renderer-vue/src/history/connectionStep.ts",
+          "hash": "14416669831339859695"
+        },
+        {
+          "file": "packages/renderer-vue/src/history/index.ts",
+          "hash": "12915042862236147"
+        },
+        {
+          "file": "packages/renderer-vue/src/history/nodeStep.ts",
+          "hash": "317679458383534597"
+        },
+        {
+          "file": "packages/renderer-vue/src/history/step.ts",
+          "hash": "8737318409204940694"
+        },
+        {
+          "file": "packages/renderer-vue/src/history/transactionStep.ts",
+          "hash": "17151745137123573691"
+        },
+        {
+          "file": "packages/renderer-vue/src/icons/ArrowBackUp.vue",
+          "hash": "2887196938653302186"
+        },
+        {
+          "file": "packages/renderer-vue/src/icons/ArrowForwardUp.vue",
+          "hash": "2070305543915049377"
+        },
+        {
+          "file": "packages/renderer-vue/src/icons/ArrowLeft.vue",
+          "hash": "17314633465589291422"
+        },
+        {
+          "file": "packages/renderer-vue/src/icons/ChevronDown.vue",
+          "hash": "14768674299506189769"
+        },
+        {
+          "file": "packages/renderer-vue/src/icons/Clipboard.vue",
+          "hash": "14455401950180176832"
+        },
+        {
+          "file": "packages/renderer-vue/src/icons/Copy.vue",
+          "hash": "14568724168814374213"
+        },
+        {
+          "file": "packages/renderer-vue/src/icons/DeviceFloppy.vue",
+          "hash": "12900312967838627032"
+        },
+        {
+          "file": "packages/renderer-vue/src/icons/Hierarchy2.vue",
+          "hash": "10601919599848651701"
+        },
+        {
+          "file": "packages/renderer-vue/src/icons/Readme.md",
+          "hash": "4070374235365543972"
+        },
+        {
+          "file": "packages/renderer-vue/src/icons/SelectAll.vue",
+          "hash": "15862331816353425140"
+        },
+        {
+          "file": "packages/renderer-vue/src/icons/Trash.vue",
+          "hash": "13155992344345321876"
+        },
+        {
+          "file": "packages/renderer-vue/src/icons/VerticalDots.vue",
+          "hash": "3869889684781272174"
+        },
+        {
+          "file": "packages/renderer-vue/src/icons/ZoomScan.vue",
+          "hash": "10997758786564007985"
+        },
+        {
+          "file": "packages/renderer-vue/src/icons/index.ts",
+          "hash": "9482321090389974799"
+        },
+        {
+          "file": "packages/renderer-vue/src/index.ts",
+          "hash": "7768487721023888197"
+        },
+        {
+          "file": "packages/renderer-vue/src/node/Node.vue",
+          "hash": "13710315692120610188"
+        },
+        {
+          "file": "packages/renderer-vue/src/node/NodeInterface.vue",
+          "hash": "12808317055811491782"
+        },
+        {
+          "file": "packages/renderer-vue/src/node/viewNode.ts",
+          "hash": "11863761809543232454"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/baseNumericInterface.ts",
+          "hash": "4317797522518455378"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/button/ButtonInterface.ts",
+          "hash": "16899512691745041572"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/button/ButtonInterface.vue",
+          "hash": "13819032430614361348"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/checkbox/CheckboxInterface.ts",
+          "hash": "16617595807271248014"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/checkbox/CheckboxInterface.vue",
+          "hash": "5274571213877182383"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/index.ts",
+          "hash": "5051077364733113808"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/integer/IntegerInterface.ts",
+          "hash": "9564013415901849114"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/integer/IntegerInterface.vue",
+          "hash": "4136121938410511336"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/number/NumberInterface.ts",
+          "hash": "16144738538581528397"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/number/NumberInterface.vue",
+          "hash": "4445219583609501697"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/select/SelectInterface.ts",
+          "hash": "3890489153611886862"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/select/SelectInterface.vue",
+          "hash": "6472599176094470125"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/slider/SliderInterface.ts",
+          "hash": "9584256085584599562"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/slider/SliderInterface.vue",
+          "hash": "919567724700976045"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/text/TextInterface.ts",
+          "hash": "1967594647331380007"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/text/TextInterface.vue",
+          "hash": "14526318528368943036"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/textareainput/TextareaInputInterface.ts",
+          "hash": "7072979089540023668"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/textareainput/TextareaInputInterface.vue",
+          "hash": "16840075344473357529"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/textinput/TextInputInterface.ts",
+          "hash": "4505918284136169772"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodeinterfaces/textinput/TextInputInterface.vue",
+          "hash": "7182930507611901445"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodepalette/NodePalette.vue",
+          "hash": "13416934844032936988"
+        },
+        {
+          "file": "packages/renderer-vue/src/nodepalette/PaletteEntry.vue",
+          "hash": "7639573714361810644"
+        },
+        {
+          "file": "packages/renderer-vue/src/overrides.ts",
+          "hash": "12480814961294865759"
+        },
+        {
+          "file": "packages/renderer-vue/src/settings.ts",
+          "hash": "13995593942255299782"
+        },
+        {
+          "file": "packages/renderer-vue/src/shims.d.ts",
+          "hash": "1778821684959290582"
+        },
+        {
+          "file": "packages/renderer-vue/src/sidebar/Sidebar.vue",
+          "hash": "4239733672708562134"
+        },
+        {
+          "file": "packages/renderer-vue/src/sidebar/index.ts",
+          "hash": "12559974965543515655"
+        },
+        {
+          "file": "packages/renderer-vue/src/sidebar/openSidebar.command.ts",
+          "hash": "2764850306420774679"
+        },
+        {
+          "file": "packages/renderer-vue/src/toolbar/Toolbar.vue",
+          "hash": "15546569602525462236"
+        },
+        {
+          "file": "packages/renderer-vue/src/toolbar/ToolbarButton.vue",
+          "hash": "8104544159654682802"
+        },
+        {
+          "file": "packages/renderer-vue/src/toolbar/index.ts",
+          "hash": "1065392927677726447"
+        },
+        {
+          "file": "packages/renderer-vue/src/toolbar/toolbarCommands.ts",
+          "hash": "5621242647768643103"
+        },
+        {
+          "file": "packages/renderer-vue/src/utility/index.ts",
+          "hash": "1433158896982616166"
+        },
+        {
+          "file": "packages/renderer-vue/src/utility/isInputElements.ts",
+          "hash": "4555767142718943530"
+        },
+        {
+          "file": "packages/renderer-vue/src/utility/nodePosition.ts",
+          "hash": "10494946620780993727"
+        },
+        {
+          "file": "packages/renderer-vue/src/utility/useDragMove.ts",
+          "hash": "9684277419061814787"
+        },
+        {
+          "file": "packages/renderer-vue/src/utility/useGraph.ts",
+          "hash": "1296701077607116208"
+        },
+        {
+          "file": "packages/renderer-vue/src/utility/useNodeCategories.ts",
+          "hash": "17770200703882208521"
+        },
+        {
+          "file": "packages/renderer-vue/src/utility/useTransform.ts",
+          "hash": "718154112874052027"
+        },
+        {
+          "file": "packages/renderer-vue/src/utility/useViewModel.ts",
+          "hash": "4434480957564764399"
+        },
+        {
+          "file": "packages/renderer-vue/src/viewModel.ts",
+          "hash": "1608959474400084152"
+        },
+        {
+          "file": "packages/renderer-vue/src/zoomToFit.ts",
+          "hash": "9953926252134725734"
+        },
+        {
+          "file": "packages/renderer-vue/tsconfig.json",
+          "hash": "6494566727241197878"
+        },
+        {
+          "file": "packages/renderer-vue/vite.config.ts",
+          "hash": "503669037175634249"
+        }
+      ],
+      "@baklavajs/engine": [
+        {
+          "file": "packages/engine/README.md",
+          "hash": "9451030871188939762"
+        },
+        {
+          "file": "packages/engine/jest.config.js",
+          "hash": "14968890834501451808"
+        },
+        {
+          "file": "packages/engine/package.json",
+          "hash": "11261742092081964189",
+          "deps": [
+            "npm:@types/jest",
+            "npm:jest",
+            "npm:rimraf",
+            "npm:ts-jest",
+            "npm:ts-node",
+            "npm:typescript",
+            "@baklavajs/core",
+            "@baklavajs/events"
+          ]
+        },
+        {
+          "file": "packages/engine/src/applyResult.ts",
+          "hash": "1919981402847069023"
+        },
+        {
+          "file": "packages/engine/src/baseEngine.ts",
+          "hash": "8537047985242538686"
+        },
+        {
+          "file": "packages/engine/src/dependencyEngine.ts",
+          "hash": "5247810327759889280"
+        },
+        {
+          "file": "packages/engine/src/forwardEngine.ts",
+          "hash": "6131460879744902599"
+        },
+        {
+          "file": "packages/engine/src/index.ts",
+          "hash": "9538367089919266433"
+        },
+        {
+          "file": "packages/engine/src/overrides.ts",
+          "hash": "15068088598809944971"
+        },
+        {
+          "file": "packages/engine/src/topologicalSorting.ts",
+          "hash": "15923731203378786391"
+        },
+        {
+          "file": "packages/engine/test/applyResult.spec.ts",
+          "hash": "10557846143060329706"
+        },
+        {
+          "file": "packages/engine/test/baseEngine.spec.ts",
+          "hash": "8654464386161158511"
+        },
+        {
+          "file": "packages/engine/test/dependencyEngine.spec.ts",
+          "hash": "6824112491666921061"
+        },
+        {
+          "file": "packages/engine/test/forwardEngine.spec.ts",
+          "hash": "11379374941438609837"
+        },
+        {
+          "file": "packages/engine/test/testNode.ts",
+          "hash": "9766235367195660542"
+        },
+        {
+          "file": "packages/engine/test/topologicalSorting.spec.ts",
+          "hash": "13229482584658274626"
+        },
+        {
+          "file": "packages/engine/test/utils.ts",
+          "hash": "13932438050819180202"
+        },
+        {
+          "file": "packages/engine/tsconfig.build.json",
+          "hash": "8050239860691190118"
+        },
+        {
+          "file": "packages/engine/tsconfig.json",
+          "hash": "14789797149990272211"
+        }
+      ],
+      "@baklavajs/themes": [
+        {
+          "file": "packages/themes/package.json",
+          "hash": "15877360901917626685",
+          "deps": [
+            "npm:@types/sass",
+            "npm:rimraf",
+            "npm:sass",
+            "npm:ts-node",
+            "npm:typescript"
+          ]
+        },
+        {
+          "file": "packages/themes/src/build.ts",
+          "hash": "8092019462146005054"
+        },
+        {
+          "file": "packages/themes/src/classic/all.scss",
+          "hash": "9335772069956425632"
+        },
+        {
+          "file": "packages/themes/src/classic/animations.scss",
+          "hash": "12370345266672318072"
+        },
+        {
+          "file": "packages/themes/src/classic/atoms/atoms.scss",
+          "hash": "16327231530248023719"
+        },
+        {
+          "file": "packages/themes/src/classic/atoms/button.scss",
+          "hash": "14107214936181804849"
+        },
+        {
+          "file": "packages/themes/src/classic/atoms/checkbox.scss",
+          "hash": "9099711943522383607"
+        },
+        {
+          "file": "packages/themes/src/classic/atoms/context-menu.scss",
+          "hash": "2268568214684969133"
+        },
+        {
+          "file": "packages/themes/src/classic/atoms/icon.scss",
+          "hash": "14242994931158437383"
+        },
+        {
+          "file": "packages/themes/src/classic/atoms/input.scss",
+          "hash": "13602615188169628236"
+        },
+        {
+          "file": "packages/themes/src/classic/atoms/numinput.scss",
+          "hash": "52482759492821935"
+        },
+        {
+          "file": "packages/themes/src/classic/atoms/select.scss",
+          "hash": "9923890132517519940"
+        },
+        {
+          "file": "packages/themes/src/classic/atoms/slider.scss",
+          "hash": "9817210731478427289"
+        },
+        {
+          "file": "packages/themes/src/classic/components/components.scss",
+          "hash": "9889366006628539598"
+        },
+        {
+          "file": "packages/themes/src/classic/components/connection.scss",
+          "hash": "7860834751535282730"
+        },
+        {
+          "file": "packages/themes/src/classic/components/minimap.scss",
+          "hash": "17655394041767588669"
+        },
+        {
+          "file": "packages/themes/src/classic/components/node-editor.scss",
+          "hash": "406299624181720741"
+        },
+        {
+          "file": "packages/themes/src/classic/components/node-interface.scss",
+          "hash": "10571955417515208057"
+        },
+        {
+          "file": "packages/themes/src/classic/components/node-palette.scss",
+          "hash": "11754505582348579595"
+        },
+        {
+          "file": "packages/themes/src/classic/components/node.scss",
+          "hash": "8490197461744146164"
+        },
+        {
+          "file": "packages/themes/src/classic/components/sidebar.scss",
+          "hash": "4543098422248947781"
+        },
+        {
+          "file": "packages/themes/src/classic/components/toolbar.scss",
+          "hash": "13312885597346193056"
+        },
+        {
+          "file": "packages/themes/src/classic/styles.scss",
+          "hash": "9437637187873052275"
+        },
+        {
+          "file": "packages/themes/src/classic/variables.scss",
+          "hash": "6595309058236003323"
+        },
+        {
+          "file": "packages/themes/src/syrup-dark/all.scss",
+          "hash": "11434548974305434449"
+        },
+        {
+          "file": "packages/themes/src/syrup-dark/variables.scss",
+          "hash": "6081166387995623746"
+        },
+        {
+          "file": "packages/themes/tsconfig.json",
+          "hash": "13870369823937939267"
+        }
+      ],
+      "@baklavajs/core": [
+        {
+          "file": "packages/core/README.md",
+          "hash": "9451030871188939762"
+        },
+        {
+          "file": "packages/core/jest.config.js",
+          "hash": "14968890834501451808"
+        },
+        {
+          "file": "packages/core/package.json",
+          "hash": "4317426532836027370",
+          "deps": [
+            "npm:@types/jest",
+            "npm:@types/uuid",
+            "npm:jest",
+            "npm:rimraf",
+            "npm:ts-jest",
+            "npm:ts-node",
+            "npm:typedoc",
+            "npm:typescript",
+            "@baklavajs/events",
+            "npm:uuid"
+          ]
+        },
+        {
+          "file": "packages/core/src/connection.ts",
+          "hash": "9699549399120207468"
+        },
+        {
+          "file": "packages/core/src/defineNode.ts",
+          "hash": "5195668873399998474"
+        },
+        {
+          "file": "packages/core/src/dynamicNode.ts",
+          "hash": "11618972468076468755"
+        },
+        {
+          "file": "packages/core/src/editor.ts",
+          "hash": "16621683413189616513"
+        },
+        {
+          "file": "packages/core/src/engine.ts",
+          "hash": "11660642918625405701"
+        },
+        {
+          "file": "packages/core/src/eventDataTypes.ts",
+          "hash": "16638485441931092692"
+        },
+        {
+          "file": "packages/core/src/graph.ts",
+          "hash": "758019437130771353"
+        },
+        {
+          "file": "packages/core/src/graphInterface.ts",
+          "hash": "14323682041138776935"
+        },
+        {
+          "file": "packages/core/src/graphNode.ts",
+          "hash": "3748290667982574954"
+        },
+        {
+          "file": "packages/core/src/graphTemplate.ts",
+          "hash": "7407347008554881808"
+        },
+        {
+          "file": "packages/core/src/index.ts",
+          "hash": "3076713285417021891"
+        },
+        {
+          "file": "packages/core/src/node.ts",
+          "hash": "15335188868590150396"
+        },
+        {
+          "file": "packages/core/src/nodeInterface.ts",
+          "hash": "4088006027635192"
+        },
+        {
+          "file": "packages/core/src/utils.ts",
+          "hash": "9146664735222270459"
+        },
+        {
+          "file": "packages/core/test/OutputNode.ts",
+          "hash": "14095784754270327589"
+        },
+        {
+          "file": "packages/core/test/TestNode.ts",
+          "hash": "15439492958777471649"
+        },
+        {
+          "file": "packages/core/test/connection.spec.ts",
+          "hash": "10431009766672892407"
+        },
+        {
+          "file": "packages/core/test/defineNode.spec.ts",
+          "hash": "1937965201038431083"
+        },
+        {
+          "file": "packages/core/test/dynamicNode.spec.ts",
+          "hash": "17213419956121089408"
+        },
+        {
+          "file": "packages/core/test/editor.spec.ts",
+          "hash": "7403813935489100759"
+        },
+        {
+          "file": "packages/core/test/graph.spec.ts",
+          "hash": "697558975571835673"
+        },
+        {
+          "file": "packages/core/test/graphNode.spec.ts",
+          "hash": "13365612371395383238"
+        },
+        {
+          "file": "packages/core/test/node.spec.ts",
+          "hash": "9182789820786847346"
+        },
+        {
+          "file": "packages/core/test/nodeInterface.spec.ts",
+          "hash": "15181775289867259832"
+        },
+        {
+          "file": "packages/core/tsconfig.build.json",
+          "hash": "8050239860691190118"
+        },
+        {
+          "file": "packages/core/tsconfig.json",
+          "hash": "14789797149990272211"
+        }
+      ],
+      "baklavajs": [
+        {
+          "file": "packages/full/README.md",
+          "hash": "464824998200455893"
+        },
+        {
+          "file": "packages/full/package.json",
+          "hash": "17459529596037084737",
+          "deps": [
+            "npm:esbuild",
+            "npm:typescript",
+            "@baklavajs/core",
+            "@baklavajs/engine",
+            "@baklavajs/interface-types",
+            "@baklavajs/renderer-vue",
+            "@baklavajs/themes"
+          ]
+        },
+        {
+          "file": "packages/full/src/bundle.ts",
+          "hash": "13274291505294702491"
+        },
+        {
+          "file": "packages/full/src/index.ts",
+          "hash": "4104463860392521889"
+        },
+        {
+          "file": "packages/full/test.html",
+          "hash": "3360058663077298012"
+        },
+        {
+          "file": "packages/full/tsconfig.json",
+          "hash": "8458723658074545463"
+        }
+      ]
+    }
+  }
+}

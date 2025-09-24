@@ -1,0 +1,87 @@
+{
+  "run": {
+    "command": "cli run build",
+    "startTime": "2025-09-24T20:53:58.857Z",
+    "endTime": "2025-09-24T20:54:51.121Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "@baklavajs/themes:build",
+      "target": "build",
+      "projectName": "@baklavajs/themes",
+      "hash": "13614786248973554084",
+      "startTime": "2025-09-24T20:53:58.880Z",
+      "endTime": "2025-09-24T20:54:02.661Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@baklavajs/events:build",
+      "target": "build",
+      "projectName": "@baklavajs/events",
+      "hash": "14112450247040629129",
+      "startTime": "2025-09-24T20:53:58.880Z",
+      "endTime": "2025-09-24T20:54:07.368Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@baklavajs/core:build",
+      "target": "build",
+      "projectName": "@baklavajs/core",
+      "hash": "10342522077095801245",
+      "startTime": "2025-09-24T20:54:07.487Z",
+      "endTime": "2025-09-24T20:54:17.196Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@baklavajs/engine:build",
+      "target": "build",
+      "projectName": "@baklavajs/engine",
+      "hash": "18412505912900438749",
+      "startTime": "2025-09-24T20:54:17.505Z",
+      "endTime": "2025-09-24T20:54:27.400Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@baklavajs/renderer-vue:build",
+      "target": "build",
+      "projectName": "@baklavajs/renderer-vue",
+      "hash": "3484206890326329094",
+      "startTime": "2025-09-24T20:54:17.505Z",
+      "endTime": "2025-09-24T20:54:30.401Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@baklavajs/interface-types:build",
+      "target": "build",
+      "projectName": "@baklavajs/interface-types",
+      "hash": "3325530522112585665",
+      "startTime": "2025-09-24T20:54:30.620Z",
+      "endTime": "2025-09-24T20:54:40.053Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "baklavajs:build",
+      "target": "build",
+      "projectName": "baklavajs",
+      "hash": "6101124630492890648",
+      "startTime": "2025-09-24T20:54:40.098Z",
+      "endTime": "2025-09-24T20:54:51.074Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    }
+  ]
+}
