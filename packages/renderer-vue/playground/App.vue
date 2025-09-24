@@ -7,8 +7,15 @@
             </template>
         </BaklavaEditor>
         <button @click="calculate">Calculate</button>
-        <button @click="save">Save</button>
-        <button @click="load">Load</button>
+        <button @click="saveToFile">Save to File</button>
+        <button @click="triggerFileInput">Load from File</button>
+        <input
+            ref="fileInput"
+            type="file"
+            accept=".json"
+            style="display: none"
+            @change="loadFromFile"
+        />
         <button @click="setSelectItems">Set Select Items</button>
         <button @click="changeGridSize">Change Grid Size</button>
         <button @click="createSubgraph">Create Subgraph</button>
@@ -44,13 +51,14 @@ import ReactiveOutputTestNode from "./ReactiveOutputTestNode";
 import { stringType, numberType, booleanType } from "./interfaceTypes";
 
 import CommentNodeRenderer from "./CommentNodeRenderer.vue";
-import { defineComponent, h } from "vue";
+import { defineComponent, h, ref } from "vue";
 
 const NodeComponent = Components.Node;
 
 const token = Symbol("token");
 const baklavaView = useBaklava();
 const editor = baklavaView.editor;
+const fileInput = ref<HTMLInputElement>();
 
 (window as any).editor = baklavaView.editor;
 baklavaView.settings.enableMinimap = true;
@@ -116,29 +124,63 @@ const calculate = async () => {
     console.log(await engine.runOnce("def"));
 };
 
-const save = () => {
-    const state = JSON.stringify(editor.save());
-    console.log("Saving to localstorage", state);
-    window.localStorage.setItem("state", JSON.stringify(editor.save()));
+const saveToFile = () => {
+    const state = JSON.stringify(editor.save(), null, 2);
+    const blob = new Blob([state], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `baklava-graph-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    console.log("Graph saved to file");
 };
 
-const load = () => {
-    const state = window.localStorage.getItem("state");
+const triggerFileInput = () => {
+    fileInput.value?.click();
+};
 
-    if (!state) {
+const loadFromFile = (event: Event) => {
+    const target = event.target as HTMLInputElement;
+    const file = target.files?.[0];
+
+    if (!file) {
         return;
     }
 
-    try {
-        editor.load(JSON.parse(state));
-        console.log("Loaded state from localStorage");
-    } catch (e) {
-        console.error(e);
-        return;
-    }
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        try {
+            const content = e.target?.result as string;
+            const state = JSON.parse(content);
+            editor.load(state);
+            console.log("Graph loaded from file:", file.name);
+        } catch (error) {
+            console.error("Failed to load graph from file:", error);
+            alert("Failed to load file. Please make sure it's a valid Baklava graph JSON file.");
+        }
+    };
+    reader.readAsText(file);
+
+    // Reset the input so the same file can be loaded again
+    target.value = "";
 };
 
-load();
+// Auto-load from localStorage on startup (optional - uncomment if needed)
+// const loadFromLocalStorage = () => {
+//     const state = window.localStorage.getItem("state");
+//     if (state) {
+//         try {
+//             editor.load(JSON.parse(state));
+//             console.log("Loaded state from localStorage");
+//         } catch (e) {
+//             console.error(e);
+//         }
+//     }
+// };
+// loadFromLocalStorage();
 
 const saveAndLoad = () => {
     editor.load(editor.save());
