@@ -1,16 +1,15 @@
 <template>
-    <div class="baklava-node-palette" @contextmenu.stop.prevent="">
+    <!-- TODO MC the CSS issue is preventing me from changing the port shape via CSS variables. So inline for now -->
+    <div class="baklava-node-palette" @contextmenu.stop.prevent="" style="width: 400px">
         <section v-for="c in categories" :key="c.name">
             <h1 v-if="c.name !== 'default'">
                 {{ c.name }}
             </h1>
-            <PaletteEntry
-                v-for="(ni, nt) in c.nodeTypes"
-                :key="nt"
-                :type="nt"
-                :title="ni.title"
-                @pointerdown="onDragStart(nt, ni)"
-            />
+            <PaletteEntry v-for="(ni, nt) in c.nodeTypes"
+                          :key="nt"
+                          :type="nt"
+                          :title="ni.title"
+                          @pointerdown="onDragStart(nt, ni)" />
         </section>
     </div>
     <transition name="fade">

@@ -1,11 +1,34 @@
 .baklava-node-interface[data-interface-type="string"] {
-    --baklava-node-interface-port-color: green;
+    --baklava-node-interface-port-color: coral;
+    --baklava-node-interface-port-radius: 50%;
 }
 
 .baklava-node-interface[data-interface-type="number"] {
-    --baklava-node-interface-port-color: red;
+    --baklava-node-interface-port-color: deepskyblue;
+    --baklava-node-interface-port-radius: 50%;
 }
 
 .baklava-node-interface[data-interface-type="boolean"] {
-    --baklava-node-interface-port-color: purple;
+    --baklava-node-interface-port-color: hotpink;
+    --baklava-node-interface-port-radius: 50%;
+}
+
+.baklava-node-interface[data-interface-type="part"] {
+    --baklava-node-interface-port-color: green;
+    --baklava-node-interface-port-radius: 50%;
+}
+
+.baklava-node-interface[data-interface-type="partList"] {
+    --baklava-node-interface-port-color: green;
+    --baklava-node-interface-port-radius: 25%;
+}
+
+.baklava-node-interface[data-interface-type="measurement"] {
+    --baklava-node-interface-port-color: mediumslateblue;
+    --baklava-node-interface-port-radius: 50%;
+}
+
+.baklava-node-interface[data-interface-type="measurementList"] {
+    --baklava-node-interface-port-color: mediumslateblue;
+    --baklava-node-interface-port-radius: 25%;
 }

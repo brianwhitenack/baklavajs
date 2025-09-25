@@ -4,6 +4,7 @@
             v-if="intf.port"
             class="__port"
             :class="{ '--selected': temporaryConnection?.from === intf }"
+            :style="portStyles"
             @pointerover="startHover"
             @pointerout="endHover"
         >
@@ -28,65 +29,84 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, onUpdated, Ref, ref } from "vue";
-import { AbstractNode, NodeInterface } from "@baklavajs/core";
-import { useViewModel } from "../utility";
-import { useTemporaryConnection } from "../editor/temporaryConnection";
+    import { computed, onMounted, onUpdated, Ref, ref } from "vue";
+    import { AbstractNode, NodeInterface } from "@baklavajs/core";
+    import { useViewModel } from "../utility";
+    import { useTemporaryConnection } from "../editor/temporaryConnection";
 
-const ellipsis = (value: any, characters = 100) => {
-    const stringValue: string = typeof value?.toString === "function" ? String(value) : "";
+    const ellipsis = (value: any, characters = 100) => {
+        const stringValue: string = typeof value?.toString === "function" ? String(value) : "";
 
-    if (stringValue.length > characters) {
-        return stringValue.slice(0, characters) + "...";
-    }
+        if (stringValue.length > characters) {
+            return stringValue.slice(0, characters) + "...";
+        }
 
-    return stringValue;
-};
+        return stringValue;
+    };
 
-const props = defineProps<{
-    node: AbstractNode;
-    intf: NodeInterface;
-}>();
+    const props = defineProps<{
+        node: AbstractNode;
+        intf: NodeInterface;
+    }>();
 
-const { viewModel } = useViewModel();
-const { hoveredOver, temporaryConnection } = useTemporaryConnection();
+    const { viewModel } = useViewModel();
+    const { hoveredOver, temporaryConnection } = useTemporaryConnection();
 
-const el = ref<HTMLElement | null>(null) as Ref<HTMLElement>;
+    const el = ref<HTMLElement | null>(null) as Ref<HTMLElement>;
 
-const isConnected = computed(() => props.intf.connectionCount > 0);
-const isHovered = ref<boolean>(false);
-const showTooltip = computed(() => viewModel.value.settings.displayValueOnHover && isHovered.value);
-const classes = computed(() => ({
-    "--input": props.intf.isInput,
-    "--output": !props.intf.isInput,
-    "--connected": isConnected.value,
-}));
-const showComponent = computed<boolean>(
-    () => props.intf.component && (!props.intf.isInput || !props.intf.port || props.intf.connectionCount === 0),
-);
+    const isConnected = computed(() => props.intf.connectionCount > 0);
+    const isHovered = ref<boolean>(false);
+    const showTooltip = computed(() => viewModel.value.settings.displayValueOnHover && isHovered.value);
+    const classes = computed(() => ({
+        "--input": props.intf.isInput,
+        "--output": !props.intf.isInput,
+        "--connected": isConnected.value,
+    }));
+    const showComponent = computed<boolean>(
+        () => props.intf.component && (!props.intf.isInput || !props.intf.port || props.intf.connectionCount === 0),
+    );
 
-const startHover = () => {
-    isHovered.value = true;
-    hoveredOver(props.intf);
-};
-const endHover = () => {
-    isHovered.value = false;
-    hoveredOver(undefined);
-};
+    // TODO MC the CSS issue is preventing me from changing the port shape via CSS variables. So inline for now
+    const portStyles = computed(() => {
+        // Get the interface type directly from the type property
+        const intfType = props.intf.type || "";
 
-const onRender = () => {
-    if (el.value) {
-        viewModel.value.hooks.renderInterface.execute({ intf: props.intf, el: el.value });
-    }
-};
+        const roundedSquare = "25%";
+        const circle = "50%";
 
-const openSidebar = () => {
-    const sidebar = viewModel.value.displayedGraph.sidebar;
-    sidebar.nodeId = props.node.id;
-    sidebar.optionName = props.intf.name;
-    sidebar.visible = true;
-};
+        // Define port radius based on interface type
+        const radiusMap: Record<string, string> = {
+            "measurementList": roundedSquare,
+            "partList": roundedSquare
+        };
 
-onMounted(onRender);
-onUpdated(onRender);
+        return {
+            borderRadius: radiusMap[intfType] || circle // Default to circle
+        };
+    });
+
+    const startHover = () => {
+        isHovered.value = true;
+        hoveredOver(props.intf);
+    };
+    const endHover = () => {
+        isHovered.value = false;
+        hoveredOver(undefined);
+    };
+
+    const onRender = () => {
+        if (el.value) {
+            viewModel.value.hooks.renderInterface.execute({ intf: props.intf, el: el.value });
+        }
+    };
+
+    const openSidebar = () => {
+        const sidebar = viewModel.value.displayedGraph.sidebar;
+        sidebar.nodeId = props.node.id;
+        sidebar.optionName = props.intf.name;
+        sidebar.visible = true;
+    };
+
+    onMounted(onRender);
+    onUpdated(onRender);
 </script>
