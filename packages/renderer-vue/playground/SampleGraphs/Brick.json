@@ -1,0 +1,222 @@
+{
+  "graph": {
+    "id": "343b2cce-b5dc-407f-b253-fb7d5ccc469a",
+    "nodes": [
+      {
+        "type": "PartCalculationOutputNode",
+        "id": "e44553a9-0961-4a94-8e31-92af11a74249",
+        "title": "Calculation End",
+        "inputs": {
+          "parts": {
+            "id": "18a0e611-8734-4f5a-afb3-76ae8fab47b2",
+            "value": []
+          }
+        },
+        "outputs": {},
+        "position": {
+          "x": 1638.049665678749,
+          "y": 294.3898882542404
+        },
+        "width": 200,
+        "twoColumn": false
+      },
+      {
+        "type": "CreatePartNode",
+        "id": "bfe46cd4-2904-4504-913e-c9d0cc942409",
+        "title": "Create Part",
+        "inputs": {
+          "sku": {
+            "id": "861bd2a8-2d68-462c-8735-061064c690f7",
+            "value": "SQ FT BRICK"
+          },
+          "description": {
+            "id": "4a25f52a-1c4c-4d72-9197-c8603308fb30",
+            "value": "SIDING SQ FT BRICK"
+          },
+          "package": {
+            "id": "cfa9947a-5ea1-415e-b578-a1f2b383fc77",
+            "value": "SIDING/EXT TRIM"
+          },
+          "quantity": {
+            "id": "bb587065-0142-45be-bdb0-d55dccaff1c6",
+            "value": 0
+          }
+        },
+        "outputs": {
+          "part": {
+            "id": "23cee811-72a7-4647-a05e-7c0e18376cb3",
+            "value": {
+              "sku": "SQ FT BRICK",
+              "description": "SIDING SQ FT BRICK",
+              "package": "SIDING/EXT TRIM",
+              "quantity": 0
+            }
+          }
+        },
+        "position": {
+          "x": 1374.4157088789307,
+          "y": 295.2408314986798
+        },
+        "width": 200,
+        "twoColumn": false
+      },
+      {
+        "type": "BuildingMeasurementsNode",
+        "id": "86de13cb-d457-402d-859a-57de2c7b0c1b",
+        "title": "Building Measurements",
+        "inputs": {},
+        "outputs": {
+          "measurements": {
+            "id": "f3124c69-26cf-481d-9ecb-cfb7b3f0219e",
+            "value": []
+          }
+        },
+        "position": {
+          "x": 321.08756540961093,
+          "y": 309.8494803133251
+        },
+        "width": 200,
+        "twoColumn": false
+      },
+      {
+        "type": "MeasurementAreaSumNode",
+        "id": "f703619f-fe19-4407-a742-2f36742635e8",
+        "title": "Area Sum",
+        "inputs": {
+          "measurements": {
+            "id": "d9216f05-2186-4fb4-a608-9189e3aaaae7",
+            "value": []
+          }
+        },
+        "outputs": {
+          "areaSum": {
+            "id": "ca66ff3f-d5d0-4467-954d-699efb518315",
+            "value": 0
+          }
+        },
+        "position": {
+          "x": 1102.5840376820984,
+          "y": 297.2408314986798
+        },
+        "width": 200,
+        "twoColumn": false
+      },
+      {
+        "type": "FilterToTypeNode",
+        "id": "596e18e5-5b6e-445d-9904-476d6d6ec712",
+        "title": "Filter To Type",
+        "inputs": {
+          "inputMeasurements": {
+            "id": "2b7a4b50-e5a1-4378-9fa8-d1e61e542740",
+            "value": []
+          },
+          "type": {
+            "id": "ee252aaa-c3eb-47d9-a4ae-2f51b611e43f",
+            "value": "siding"
+          }
+        },
+        "outputs": {
+          "outputMeasurements": {
+            "id": "68a73d9d-46bd-40cb-a71b-5c1f49d3f597",
+            "value": []
+          }
+        },
+        "position": {
+          "x": 576.1651804439739,
+          "y": 301.29305601117835
+        },
+        "width": 200,
+        "twoColumn": false
+      },
+      {
+        "type": "FilterToSelectionNode",
+        "id": "83b817c8-bdad-4fec-8fa5-535e1e2281dd",
+        "title": "Filter To Selection",
+        "inputs": {
+          "inputMeasurements": {
+            "id": "f211504d-ce92-4842-a7b5-b44c6ebacc6b",
+            "value": []
+          },
+          "selectionName": {
+            "id": "a22ed890-f00f-4630-b655-46ee6a88376a",
+            "value": "material"
+          },
+          "selectionValue": {
+            "id": "26e5c8f8-1054-474f-b83c-07838c5567b2",
+            "value": ""
+          }
+        },
+        "outputs": {
+          "outputMeasurements": {
+            "id": "08b8b413-b1d0-4b75-b338-16427fa9f4c3",
+            "value": []
+          }
+        },
+        "position": {
+          "x": 848.7059740528456,
+          "y": 301.2930560111783
+        },
+        "width": 200,
+        "twoColumn": false
+      },
+      {
+        "type": "StringVariable",
+        "id": "e9462420-02c7-4539-8d9c-0e30b6253082",
+        "title": "String",
+        "inputs": {},
+        "outputs": {
+          "result": {
+            "id": "c72116ca-c4e5-4ff8-864d-337e41c72dc7",
+            "value": "brick"
+          }
+        },
+        "position": {
+          "x": 588.773829258619,
+          "y": 544.7369677400993
+        },
+        "width": 200,
+        "twoColumn": false
+      }
+    ],
+    "connections": [
+      {
+        "id": "7c70059b-88ac-4d8e-8777-e00854dbb31d",
+        "from": "23cee811-72a7-4647-a05e-7c0e18376cb3",
+        "to": "18a0e611-8734-4f5a-afb3-76ae8fab47b2"
+      },
+      {
+        "id": "fba29baf-3231-48ff-9cb9-c7fceaa34f74",
+        "from": "ca66ff3f-d5d0-4467-954d-699efb518315",
+        "to": "bb587065-0142-45be-bdb0-d55dccaff1c6"
+      },
+      {
+        "id": "90f4e46c-4298-403b-a785-10cfa31a8aa6",
+        "from": "f3124c69-26cf-481d-9ecb-cfb7b3f0219e",
+        "to": "2b7a4b50-e5a1-4378-9fa8-d1e61e542740"
+      },
+      {
+        "id": "db158a08-35e4-422e-9cfd-0bbee648e5d7",
+        "from": "c72116ca-c4e5-4ff8-864d-337e41c72dc7",
+        "to": "26e5c8f8-1054-474f-b83c-07838c5567b2"
+      },
+      {
+        "id": "d701c8ec-adb1-49b2-a716-78d1d7e84946",
+        "from": "08b8b413-b1d0-4b75-b338-16427fa9f4c3",
+        "to": "d9216f05-2186-4fb4-a608-9189e3aaaae7"
+      },
+      {
+        "id": "4dc8c5d5-c472-4b54-916d-7bce78622f4e",
+        "from": "68a73d9d-46bd-40cb-a71b-5c1f49d3f597",
+        "to": "f211504d-ce92-4842-a7b5-b44c6ebacc6b"
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "panning": {
+      "x": 222.05743729951053,
+      "y": -18.392854165446252
+    },
+    "scaling": 0.8992883322192301
+  },
+  "graphTemplates": []
+}
