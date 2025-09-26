@@ -26,7 +26,7 @@ namespace BaklavaDependencyEngine.Core.Serialization
 
         public string SerializeGraph(Graph graph)
         {
-            var graphData = new GraphData
+            GraphData? graphData = new GraphData
             {
                 Id = graph.Id,
                 Nodes = graph.Nodes.Select(SerializeNode).ToList(),
@@ -38,12 +38,12 @@ namespace BaklavaDependencyEngine.Core.Serialization
 
         public Graph DeserializeGraph(string json)
         {
-            var graphData = JsonConvert.DeserializeObject<GraphData>(json);
-            var graph = new Graph { Id = graphData.Id };
+            GraphData? graphData = JsonConvert.DeserializeObject<GraphFile>(json)?.Graph;
+            Graph? graph = new Graph { Id = graphData.Id };
 
             // Create nodes
-            var nodeMap = new Dictionary<string, Node>();
-            var interfaceMap = new Dictionary<string, NodeInterface>();
+            Dictionary<string, Node>? nodeMap = new Dictionary<string, Node>();
+            Dictionary<string, NodeInterface>? interfaceMap = new Dictionary<string, NodeInterface>();
 
             foreach (var nodeData in graphData.Nodes)
             {
@@ -64,7 +64,7 @@ namespace BaklavaDependencyEngine.Core.Serialization
                 if (interfaceMap.TryGetValue(connData.FromId, out var from) &&
                     interfaceMap.TryGetValue(connData.ToId, out var to))
                 {
-                    var connection = new Connection(from, to) { Id = connData.Id };
+                    Connection? connection = new Connection(from, to) { Id = connData.Id };
                     graph.AddConnection(connection);
                 }
             }
@@ -91,7 +91,7 @@ namespace BaklavaDependencyEngine.Core.Serialization
                 throw new InvalidOperationException($"Unknown node type: {nodeData.Type}");
             }
 
-            var node = (Node)Activator.CreateInstance(nodeType);
+            Node? node = (Node)Activator.CreateInstance(nodeType);
             node.Id = nodeData.Id;
             node.Title = nodeData.Title;
 
@@ -139,6 +139,12 @@ namespace BaklavaDependencyEngine.Core.Serialization
                 ToId = connection.To.Id
             };
         }
+    }
+
+    public class GraphFile
+    {
+        public GraphData Graph { get; set; }
+        // template
     }
 
     // Data classes for serialization

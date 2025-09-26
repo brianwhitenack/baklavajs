@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BaklavaDependencyEngine.Console")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+870d0bf84b210bf761a4b9f60567ef72ae062692")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a54774e924b5e9fa0d03a06ac80ff3d2f581b8f")]
 [assembly: System.Reflection.AssemblyProductAttribute("BaklavaDependencyEngine.Console")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BaklavaDependencyEngine.Console")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

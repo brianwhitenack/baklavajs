@@ -12,11 +12,23 @@ namespace BaklavaDependencyEngine.Console
     {
         static async Task Main(string[] args)
         {
+            System.Console.WriteLine("Enter custom graph path or leave blank for sample:");
+            string? path = System.Console.ReadLine();
+
+            Graph graph;
+            if (path != null && File.Exists(path))
+            {
+                graph = await LoadGraphFromFile(path);
+            }
+            else
+            {
+                graph = CreateSampleGraph();
+            }
+
             System.Console.WriteLine("Baklava Dependency Engine - C# Implementation");
             System.Console.WriteLine("=============================================\n");
 
             // Create a simple calculation graph
-            var graph = CreateSampleGraph();
 
             // Create and configure the engine
             var engine = new DependencyEngine();
@@ -68,6 +80,13 @@ namespace BaklavaDependencyEngine.Console
 
             System.Console.WriteLine("\nPress any key to exit...");
             System.Console.ReadKey();
+        }
+
+        private static async Task<Graph> LoadGraphFromFile(string path)
+        {
+            string graphJson = await File.ReadAllTextAsync(path);
+            GraphSerializer graphSerializer = new GraphSerializer();
+            return graphSerializer.DeserializeGraph(graphJson);
         }
 
         static Graph CreateSampleGraph()
