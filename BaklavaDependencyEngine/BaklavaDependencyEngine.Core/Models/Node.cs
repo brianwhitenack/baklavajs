@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+
+namespace BaklavaDependencyEngine.Core.Models
+{
+    public abstract class Node
+    {
+        public string Id { get; set; } = Guid.NewGuid().ToString();
+        public string Type { get; set; }
+        public string Title { get; set; }
+        public Dictionary<string, NodeInterface> Inputs { get; set; } = new Dictionary<string, NodeInterface>();
+        public Dictionary<string, NodeInterface> Outputs { get; set; } = new Dictionary<string, NodeInterface>();
+
+        [JsonIgnore]
+        public Graph ParentGraph { get; set; }
+
+        protected Node(string type, string title)
+        {
+            Type = type;
+            Title = title;
+            InitializeInterfaces();
+        }
+
+        protected virtual void InitializeInterfaces()
+        {
+            // Override in derived classes to set up inputs and outputs
+        }
+
+        public virtual async Task<Dictionary<string, object>> Calculate(
+            Dictionary<string, object> inputs,
+            CalculationContext context)
+        {
+            // Default implementation for nodes without calculation logic
+            var result = new Dictionary<string, object>();
+            foreach (var output in Outputs)
+            {
+                result[output.Key] = output.Value.Value;
+            }
+            return await Task.FromResult(result);
+        }
+
+        protected void AddInput(string key, NodeInterface nodeInterface)
+        {
+            nodeInterface.IsInput = true;
+            nodeInterface.ParentNode = this;
+            Inputs[key] = nodeInterface;
+        }
+
+        protected void AddOutput(string key, NodeInterface nodeInterface)
+        {
+            nodeInterface.IsInput = false;
+            nodeInterface.ParentNode = this;
+            Outputs[key] = nodeInterface;
+        }
+    }
+
+    public class CalculationContext
+    {
+        public object GlobalValues { get; set; }
+        public DependencyEngine Engine { get; set; }
+    }
+}

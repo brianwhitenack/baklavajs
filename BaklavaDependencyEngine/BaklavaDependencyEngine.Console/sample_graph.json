@@ -1,0 +1,152 @@
+{
+  "Id": "8b9f5b1e-0168-4208-8e83-e73e4ebbc33d",
+  "Nodes": [
+    {
+      "Id": "2e39c2f3-f0b3-49b0-9418-8f1b31ff449f",
+      "Type": "NumberNode",
+      "Title": "Number 1",
+      "Inputs": {},
+      "Outputs": {
+        "value": {
+          "Id": "aa805d74-d992-4adf-95d4-8a774d96b892",
+          "Name": "Value",
+          "Value": 10.0,
+          "AllowMultipleConnections": false,
+          "IsInput": false
+        }
+      }
+    },
+    {
+      "Id": "72fd257a-24e2-4944-8943-2fa511e74139",
+      "Type": "NumberNode",
+      "Title": "Number 2",
+      "Inputs": {},
+      "Outputs": {
+        "value": {
+          "Id": "de977d1f-9786-4c46-bd6f-5c00793440b5",
+          "Name": "Value",
+          "Value": 5.0,
+          "AllowMultipleConnections": false,
+          "IsInput": false
+        }
+      }
+    },
+    {
+      "Id": "4f9b3a1a-48a2-4c89-abea-5c4173a8b626",
+      "Type": "MathNode",
+      "Title": "Add",
+      "Inputs": {
+        "number1": {
+          "Id": "be392f08-4e27-4aca-a128-333723a3fe57",
+          "Name": "Number 1",
+          "Value": 0.0,
+          "AllowMultipleConnections": false,
+          "IsInput": true
+        },
+        "number2": {
+          "Id": "fc6bbdb5-1ab8-4d57-81f7-3e9250b28fd2",
+          "Name": "Number 2",
+          "Value": 0.0,
+          "AllowMultipleConnections": false,
+          "IsInput": true
+        }
+      },
+      "Outputs": {
+        "result": {
+          "Id": "d6e4d5ef-e05f-4405-a490-634ba51104f0",
+          "Name": "Result",
+          "Value": 0.0,
+          "AllowMultipleConnections": false,
+          "IsInput": false
+        }
+      }
+    },
+    {
+      "Id": "72686ebe-af6d-435d-9b61-fac11e961394",
+      "Type": "MathNode",
+      "Title": "Multiply by 2",
+      "Inputs": {
+        "number1": {
+          "Id": "1c4630c1-ac49-4a52-97b3-401f1d50acb7",
+          "Name": "Number 1",
+          "Value": 0.0,
+          "AllowMultipleConnections": false,
+          "IsInput": true
+        },
+        "number2": {
+          "Id": "33980bfe-e5fc-454a-a8d9-ae9ed2d440fc",
+          "Name": "Number 2",
+          "Value": 0.0,
+          "AllowMultipleConnections": false,
+          "IsInput": true
+        }
+      },
+      "Outputs": {
+        "result": {
+          "Id": "0c0a6580-a121-4b29-a2ec-480705f7c891",
+          "Name": "Result",
+          "Value": 0.0,
+          "AllowMultipleConnections": false,
+          "IsInput": false
+        }
+      }
+    },
+    {
+      "Id": "b4bb4663-327c-448a-9b9f-2693cf7bec3e",
+      "Type": "NumberNode",
+      "Title": "Multiplier",
+      "Inputs": {},
+      "Outputs": {
+        "value": {
+          "Id": "c5b200a4-2d22-4c26-9e89-9231eaf377fe",
+          "Name": "Value",
+          "Value": 2.0,
+          "AllowMultipleConnections": false,
+          "IsInput": false
+        }
+      }
+    },
+    {
+      "Id": "d825348f-bb73-452c-87e4-df0fc6eabdb8",
+      "Type": "DisplayNode",
+      "Title": "Final Output",
+      "Inputs": {
+        "value": {
+          "Id": "1685b734-a542-4176-acae-7b83cd89bbe7",
+          "Name": "Value",
+          "Value": null,
+          "AllowMultipleConnections": false,
+          "IsInput": true
+        }
+      },
+      "Outputs": {}
+    }
+  ],
+  "Connections": [
+    {
+      "Id": "3b321e1b-23a5-405b-a5d5-47075ce74564",
+      "FromId": "aa805d74-d992-4adf-95d4-8a774d96b892",
+      "ToId": "be392f08-4e27-4aca-a128-333723a3fe57"
+    },
+    {
+      "Id": "e3e75a31-5f47-44fa-b782-e21f1779f713",
+      "FromId": "de977d1f-9786-4c46-bd6f-5c00793440b5",
+      "ToId": "fc6bbdb5-1ab8-4d57-81f7-3e9250b28fd2"
+    },
+    {
+      "Id": "ee78ad6b-5ab1-4f8a-b5e1-e7583b3f6546",
+      "FromId": "d6e4d5ef-e05f-4405-a490-634ba51104f0",
+      "ToId": "1c4630c1-ac49-4a52-97b3-401f1d50acb7"
+    },
+    {
+      "Id": "cb9f8b2f-8584-4ffd-bc66-60f03d711523",
+      "FromId": "c5b200a4-2d22-4c26-9e89-9231eaf377fe",
+      "ToId": "33980bfe-e5fc-454a-a8d9-ae9ed2d440fc"
+    },
+    {
+      "Id": "5aa04449-5d90-4c13-b405-f665f21771ef",
+      "FromId": "0c0a6580-a121-4b29-a2ec-480705f7c891",
+      "ToId": "1685b734-a542-4176-acae-7b83cd89bbe7"
+    }
+  ]
+}
