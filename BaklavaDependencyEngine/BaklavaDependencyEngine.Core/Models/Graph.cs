@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace BaklavaDependencyEngine.Core.Models
 {
     public class Graph
@@ -26,7 +22,7 @@ namespace BaklavaDependencyEngine.Core.Models
 
             // Remove all connections involving this node
             Connections.RemoveAll(c =>
-                c.From.ParentNode == node || c.To.ParentNode == node);
+                c.FromInterface.ParentNode == node || c.ToInterface.ParentNode == node);
 
             Nodes.Remove(node);
             node.ParentGraph = null;
@@ -38,7 +34,7 @@ namespace BaklavaDependencyEngine.Core.Models
                 throw new ArgumentNullException(nameof(connection));
 
             // Update connection counts
-            connection.To.ConnectionCount++;
+            connection.ToInterface.ConnectionCount++;
 
             Connections.Add(connection);
         }
@@ -49,19 +45,59 @@ namespace BaklavaDependencyEngine.Core.Models
                 throw new ArgumentNullException(nameof(connection));
 
             // Update connection counts
-            connection.To.ConnectionCount--;
+            connection.ToInterface.ConnectionCount--;
 
             Connections.Remove(connection);
         }
 
         public List<Connection> GetConnectionsFromNode(Node node)
         {
-            return Connections.Where(c => c.From.ParentNode == node).ToList();
+            return Connections.Where(c => c.FromInterface.ParentNode == node).ToList();
         }
 
         public List<Connection> GetConnectionsToNode(Node node)
         {
-            return Connections.Where(c => c.To.ParentNode == node).ToList();
+            return Connections.Where(c => c.ToInterface.ParentNode == node).ToList();
+        }
+
+        public NodeInterface GetNodeInterfaceById(string id)
+        {
+            foreach (Node node in Nodes)
+            {
+                KeyValuePair<string, NodeInterface> nodeInterface = node.Inputs.Concat(node.Outputs).FirstOrDefault(ni => ni.Value.Id == id);
+                if (nodeInterface.Value != null)
+                {
+                    return nodeInterface.Value;
+                }
+            }
+
+            throw new InvalidOperationException("could not find node interface with id " + id);
+        }
+
+        public Node GetNodeById(string id)
+        {
+            Node node = Nodes.FirstOrDefault(n => n.Id == id);
+            if (node != null)
+            {
+                return node;
+            }
+            else
+            {
+                throw new InvalidOperationException("could not find node with id " + id);
+            }
+        }
+
+        public void Restore()
+        {
+            foreach (Node node in Nodes)
+            {
+                node.Restore(this);
+            }
+
+            foreach (Connection connection in Connections)
+            {
+                connection.Restore(this);
+            }
         }
     }
 }

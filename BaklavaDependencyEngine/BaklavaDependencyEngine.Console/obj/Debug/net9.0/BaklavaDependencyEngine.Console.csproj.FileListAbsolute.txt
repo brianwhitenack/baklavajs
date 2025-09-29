@@ -18,3 +18,4 @@ C:\Users\Brian.Whitenack\source\repos\Baklava\BaklavaDependencyEngine\BaklavaDep
 C:\Users\Brian.Whitenack\source\repos\Baklava\BaklavaDependencyEngine\BaklavaDependencyEngine.Console\obj\Debug\net9.0\BaklavaDependencyEngine.Console.pdb
 C:\Users\Brian.Whitenack\source\repos\Baklava\BaklavaDependencyEngine\BaklavaDependencyEngine.Console\obj\Debug\net9.0\BaklavaDependencyEngine.Console.genruntimeconfig.cache
 C:\Users\Brian.Whitenack\source\repos\Baklava\BaklavaDependencyEngine\BaklavaDependencyEngine.Console\obj\Debug\net9.0\ref\BaklavaDependencyEngine.Console.dll
+C:\Users\Brian.Whitenack\source\repos\Baklava\BaklavaDependencyEngine\BaklavaDependencyEngine.Console\bin\Debug\net9.0\JsonSubTypes.dll

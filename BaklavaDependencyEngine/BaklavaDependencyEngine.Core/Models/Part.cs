@@ -1,5 +1,3 @@
-using System;
-
 namespace BaklavaDependencyEngine.Core.Models
 {
     public class Part

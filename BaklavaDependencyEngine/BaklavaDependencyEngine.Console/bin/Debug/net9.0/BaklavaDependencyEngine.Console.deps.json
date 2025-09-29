@@ -14,6 +14,17 @@
           "BaklavaDependencyEngine.Console.dll": {}
         }
       },
+      "JsonSubTypes/2.0.1": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/JsonSubTypes.dll": {
+            "assemblyVersion": "2.0.1.0",
+            "fileVersion": "2.0.1.0"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.4": {
         "runtime": {
           "lib/net6.0/Newtonsoft.Json.dll": {
@@ -24,6 +35,7 @@
       },
       "BaklavaDependencyEngine.Core/1.0.0": {
         "dependencies": {
+          "JsonSubTypes": "2.0.1",
           "Newtonsoft.Json": "13.0.4"
         },
         "runtime": {
@@ -40,6 +52,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "JsonSubTypes/2.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1Po+Ypf0SjCeEKx5+C89Nb5OgTcqNvfS3uTI46MUM+KEp6Rq/M0h+vVsTUt/6DFRwZMTpsAJM4yJrZmEObVANA==",
+      "path": "jsonsubtypes/2.0.1",
+      "hashPath": "jsonsubtypes.2.0.1.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.4": {
       "type": "package",

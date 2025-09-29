@@ -1,9 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using JsonSubTypes;
 using BaklavaDependencyEngine.Core.ExampleNodes;
+
+using JsonSubTypes;
+
+using Newtonsoft.Json;
 
 namespace BaklavaDependencyEngine.Core.Models
 {
@@ -11,8 +10,8 @@ namespace BaklavaDependencyEngine.Core.Models
     [JsonSubtypes.KnownSubType(typeof(NumberNode), "NumberNode")]
     [JsonSubtypes.KnownSubType(typeof(MathNode), "MathNode")]
     [JsonSubtypes.KnownSubType(typeof(DisplayNode), "DisplayNode")]
-    [JsonSubtypes.KnownSubType(typeof(StringVariableNode), "StringVariableNode")]
-    [JsonSubtypes.KnownSubType(typeof(NumberVariableNode), "NumberVariableNode")]
+    [JsonSubtypes.KnownSubType(typeof(StringVariableNode), "StringVariable")]
+    [JsonSubtypes.KnownSubType(typeof(NumberVariableNode), "NumberVariable")]
     [JsonSubtypes.KnownSubType(typeof(CreatePartNode), "CreatePartNode")]
     [JsonSubtypes.KnownSubType(typeof(PartCalculationOutputNode), "PartCalculationOutputNode")]
     [JsonSubtypes.KnownSubType(typeof(MeasurementAreaNode), "MeasurementAreaNode")]
@@ -62,15 +61,28 @@ namespace BaklavaDependencyEngine.Core.Models
         protected void AddInput(string key, NodeInterface nodeInterface)
         {
             nodeInterface.IsInput = true;
-            nodeInterface.ParentNode = this;
+            nodeInterface.SetParentNode(this);
             Inputs[key] = nodeInterface;
         }
 
         protected void AddOutput(string key, NodeInterface nodeInterface)
         {
             nodeInterface.IsInput = false;
-            nodeInterface.ParentNode = this;
+            nodeInterface.SetParentNode(this);
             Outputs[key] = nodeInterface;
+        }
+
+        public void Restore(Graph graph)
+        {
+            ParentGraph = graph;
+            foreach (NodeInterface input in Inputs.Values)
+            {
+                input.Restore(graph, this);
+            }
+            foreach (NodeInterface output in Outputs.Values)
+            {
+                output.Restore(graph, this);
+            }
         }
     }
 

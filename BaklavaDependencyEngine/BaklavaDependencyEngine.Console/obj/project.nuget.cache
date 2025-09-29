@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "bkZcXK0piQA=",
+  "dgSpecHash": "HbFfyOk/VOo=",
   "success": true,
   "projectFilePath": "C:\\Users\\Brian.Whitenack\\source\\repos\\Baklava\\BaklavaDependencyEngine\\BaklavaDependencyEngine.Console\\BaklavaDependencyEngine.Console.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Brian.Whitenack\\.nuget\\packages\\jsonsubtypes\\2.0.1\\jsonsubtypes.2.0.1.nupkg.sha512",
     "C:\\Users\\Brian.Whitenack\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512"
   ],
   "logs": []

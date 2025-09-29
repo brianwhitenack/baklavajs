@@ -1,12 +1,10 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using BaklavaDependencyEngine.Core.Models;
 
 namespace BaklavaDependencyEngine.Core.ExampleNodes
 {
     public class NumberVariableNode : Node
     {
-        public NumberVariableNode() : base("NumberVariableNode", "Number Variable")
+        public NumberVariableNode() : base("NumberVariable", "Number Variable")
         {
         }
 

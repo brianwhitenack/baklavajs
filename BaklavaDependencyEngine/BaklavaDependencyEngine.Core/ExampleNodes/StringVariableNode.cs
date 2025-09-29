@@ -1,12 +1,10 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using BaklavaDependencyEngine.Core.Models;
 
 namespace BaklavaDependencyEngine.Core.ExampleNodes
 {
     public class StringVariableNode : Node
     {
-        public StringVariableNode() : base("StringVariableNode", "String Variable")
+        public StringVariableNode() : base("StringVariable", "String Variable")
         {
         }
 

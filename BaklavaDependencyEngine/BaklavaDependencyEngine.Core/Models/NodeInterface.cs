@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace BaklavaDependencyEngine.Core.Models
@@ -13,15 +11,26 @@ namespace BaklavaDependencyEngine.Core.Models
         public int ConnectionCount { get; set; }
         public bool IsInput { get; set; }
         public bool Port { get; set; } = true;
+        public string ParentNodeId { get; private set; }
 
         [JsonIgnore]
-        public Node ParentNode { get; set; }
+        public Node ParentNode { get; private set; }
 
         public NodeInterface(string name, object defaultValue = null, bool isInput = true)
         {
             Name = name;
             Value = defaultValue;
             IsInput = isInput;
+        }
+
+        public void Restore(Graph _, Node parentNode)
+        {
+            SetParentNode(parentNode);
+        }
+
+        public void SetParentNode(Node parentNode)
+        {
+            ParentNode = parentNode ?? throw new ArgumentNullException(nameof(parentNode));
         }
     }
 }

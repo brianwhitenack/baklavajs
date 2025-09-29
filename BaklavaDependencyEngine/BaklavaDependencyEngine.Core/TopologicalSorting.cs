@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using BaklavaDependencyEngine.Core.Models;
 
 namespace BaklavaDependencyEngine.Core
@@ -59,14 +56,14 @@ namespace BaklavaDependencyEngine.Core
             foreach (var node in nodes)
             {
                 var connectionsFromCurrentNode = connections
-                    .Where(c => c.From != null && result.InterfaceIdToNodeId.ContainsKey(c.From.Id) &&
-                                result.InterfaceIdToNodeId[c.From.Id] == node.Id)
+                    .Where(c => c.FromInterface != null && result.InterfaceIdToNodeId.ContainsKey(c.FromInterface.Id) &&
+                                result.InterfaceIdToNodeId[c.FromInterface.Id] == node.Id)
                     .ToList();
 
                 var adjacentNodes = new HashSet<string>(
                     connectionsFromCurrentNode
-                        .Where(c => result.InterfaceIdToNodeId.ContainsKey(c.To.Id))
-                        .Select(c => result.InterfaceIdToNodeId[c.To.Id])
+                        .Where(c => result.InterfaceIdToNodeId.ContainsKey(c.ToInterface.Id))
+                        .Select(c => result.InterfaceIdToNodeId[c.ToInterface.Id])
                 );
 
                 adjacency[node.Id] = adjacentNodes;
@@ -77,9 +74,9 @@ namespace BaklavaDependencyEngine.Core
             var startNodes = new List<Node>(nodes);
             foreach (var connection in connections)
             {
-                if (result.InterfaceIdToNodeId.ContainsKey(connection.To.Id))
+                if (result.InterfaceIdToNodeId.ContainsKey(connection.ToInterface.Id))
                 {
-                    var toNodeId = result.InterfaceIdToNodeId[connection.To.Id];
+                    var toNodeId = result.InterfaceIdToNodeId[connection.ToInterface.Id];
                     startNodes.RemoveAll(n => n.Id == toNodeId);
                 }
             }

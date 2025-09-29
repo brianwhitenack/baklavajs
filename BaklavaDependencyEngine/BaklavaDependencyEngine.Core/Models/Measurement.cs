@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace BaklavaDependencyEngine.Core.Models
 {
     public class Measurement

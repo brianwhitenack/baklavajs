@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using BaklavaDependencyEngine.Core.Models;
 
 namespace BaklavaDependencyEngine.Core
@@ -86,33 +82,33 @@ namespace BaklavaDependencyEngine.Core
                     {
                         // Find the output key for this connection
                         var outputKey = node.Outputs
-                            .FirstOrDefault(kvp => kvp.Value.Id == connection.From.Id).Key;
+                            .FirstOrDefault(kvp => kvp.Value.Id == connection.FromInterface.Id).Key;
 
                         if (outputKey == null)
                         {
                             throw new InvalidOperationException(
-                                $"Could not find key for interface {connection.From.Id}");
+                                $"Could not find key for interface {connection.FromInterface.Id}");
                         }
 
                         var value = TransferData(nodeOutputs[outputKey], connection);
 
                         // Handle multiple connections
-                        if (connection.To.AllowMultipleConnections)
+                        if (connection.ToInterface.AllowMultipleConnections)
                         {
-                            if (inputs.ContainsKey(connection.To.Id))
+                            if (inputs.ContainsKey(connection.ToInterface.Id))
                             {
-                                var list = inputs[connection.To.Id] as List<object> ?? new List<object>();
+                                var list = inputs[connection.ToInterface.Id] as List<object> ?? new List<object>();
                                 list.Add(value);
-                                inputs[connection.To.Id] = list;
+                                inputs[connection.ToInterface.Id] = list;
                             }
                             else
                             {
-                                inputs[connection.To.Id] = new List<object> { value };
+                                inputs[connection.ToInterface.Id] = new List<object> { value };
                             }
                         }
                         else
                         {
-                            inputs[connection.To.Id] = value;
+                            inputs[connection.ToInterface.Id] = value;
                         }
                     }
                 }

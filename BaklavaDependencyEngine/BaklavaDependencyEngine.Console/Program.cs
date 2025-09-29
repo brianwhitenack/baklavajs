@@ -1,9 +1,6 @@
-using System;
-using System.IO;
-using System.Threading.Tasks;
 using BaklavaDependencyEngine.Core;
-using BaklavaDependencyEngine.Core.Models;
 using BaklavaDependencyEngine.Core.ExampleNodes;
+using BaklavaDependencyEngine.Core.Models;
 using BaklavaDependencyEngine.Core.Serialization;
 
 namespace BaklavaDependencyEngine.Console
@@ -27,7 +24,7 @@ namespace BaklavaDependencyEngine.Console
                 System.Console.WriteLine("2. Part Creation Sample");
                 System.Console.WriteLine("3. Building Measurements Sample");
                 System.Console.WriteLine("4. Filter Nodes Sample");
-                var choice = System.Console.ReadLine();
+                string choice = System.Console.ReadLine();
 
                 graph = choice switch
                 {
@@ -44,7 +41,7 @@ namespace BaklavaDependencyEngine.Console
             // Create a simple calculation graph
 
             // Create and configure the engine
-            var engine = new DependencyEngine();
+            DependencyEngine engine = new DependencyEngine();
 
             // Subscribe to events
             engine.BeforeNodeCalculation += (sender, e) =>
@@ -55,7 +52,7 @@ namespace BaklavaDependencyEngine.Console
             engine.AfterNodeCalculation += (sender, e) =>
             {
                 System.Console.WriteLine($"  Completed: {e.Node.Title}");
-                foreach (var output in e.Values)
+                foreach (KeyValuePair<string, object> output in e.Values)
                 {
                     System.Console.WriteLine($"    {output.Key} = {output.Value}");
                 }
@@ -65,12 +62,12 @@ namespace BaklavaDependencyEngine.Console
             System.Console.WriteLine("Running graph calculation...\n");
             try
             {
-                var result = await engine.RunGraph(graph);
+                CalculationResult result = await engine.RunGraph(graph);
 
                 System.Console.WriteLine("\n=== Final Results ===");
-                foreach (var nodeResult in result)
+                foreach (KeyValuePair<string, Dictionary<string, object>> nodeResult in result)
                 {
-                    var node = graph.Nodes.Find(n => n.Id == nodeResult.Key);
+                    Node node = graph.Nodes.Find(n => n.Id == nodeResult.Key);
                     System.Console.WriteLine($"\nNode: {node?.Title ?? nodeResult.Key}");
                     foreach (var output in nodeResult.Value)
                     {
@@ -104,7 +101,7 @@ namespace BaklavaDependencyEngine.Console
             string graphJson = await File.ReadAllTextAsync(path);
 
             // Use V3 serializer with JsonSubTypes
-            var graphSerializer = new GraphSerializerV3();
+            GraphSerializer graphSerializer = new GraphSerializer();
             return graphSerializer.DeserializeGraph(graphJson);
         }
 
@@ -113,30 +110,30 @@ namespace BaklavaDependencyEngine.Console
 
         static Graph CreateSampleGraph()
         {
-            var graph = new Graph();
+            Graph graph = new Graph();
 
             // Create nodes
-            var number1 = new NumberNode();
+            NumberNode number1 = new NumberNode();
             number1.Outputs["value"].Value = 10.0;
             number1.Title = "Number 1";
 
-            var number2 = new NumberNode();
+            NumberNode number2 = new NumberNode();
             number2.Outputs["value"].Value = 5.0;
             number2.Title = "Number 2";
 
-            var addNode = new MathNode();
+            MathNode addNode = new MathNode();
             addNode.MathOperation = MathNode.Operation.Add;
             addNode.Title = "Add";
 
-            var multiplyNode = new MathNode();
+            MathNode multiplyNode = new MathNode();
             multiplyNode.MathOperation = MathNode.Operation.Multiply;
             multiplyNode.Title = "Multiply by 2";
 
-            var number3 = new NumberNode();
+            NumberNode number3 = new NumberNode();
             number3.Outputs["value"].Value = 2.0;
             number3.Title = "Multiplier";
 
-            var displayNode = new DisplayNode();
+            DisplayNode displayNode = new DisplayNode();
             displayNode.Title = "Final Output";
 
             // Add nodes to graph
@@ -178,27 +175,27 @@ namespace BaklavaDependencyEngine.Console
 
         static Graph CreatePartSampleGraph()
         {
-            var graph = new Graph();
+            Graph graph = new Graph();
 
             // Create Part Creation nodes
-            var skuVar = new StringVariableNode();
+            StringVariableNode skuVar = new StringVariableNode();
             skuVar.Outputs["result"].Value = "ABC-123";
             skuVar.Title = "SKU Variable";
 
-            var descVar = new StringVariableNode();
+            StringVariableNode descVar = new StringVariableNode();
             descVar.Outputs["result"].Value = "Sample Component";
             descVar.Title = "Description Variable";
 
-            var pkgVar = new StringVariableNode();
+            StringVariableNode pkgVar = new StringVariableNode();
             pkgVar.Outputs["result"].Value = "Standard Package";
             pkgVar.Title = "Package Variable";
 
-            var qtyVar = new NumberVariableNode();
+            NumberVariableNode qtyVar = new NumberVariableNode();
             qtyVar.Outputs["result"].Value = 10.0;
             qtyVar.Title = "Quantity Variable";
 
-            var createPartNode = new CreatePartNode();
-            var outputNode = new PartCalculationOutputNode();
+            CreatePartNode createPartNode = new CreatePartNode();
+            PartCalculationOutputNode outputNode = new PartCalculationOutputNode();
 
             // Add all nodes
             graph.AddNode(skuVar);
@@ -222,20 +219,20 @@ namespace BaklavaDependencyEngine.Console
 
         static Graph CreateBuildingMeasurementGraph()
         {
-            var graph = new Graph();
+            Graph graph = new Graph();
 
             // Building measurements input
-            var buildingMeasurements = new BuildingMeasurementsNode();
+            BuildingMeasurementsNode buildingMeasurements = new BuildingMeasurementsNode();
 
             // Sum nodes
-            var areaSumNode = new MeasurementAreaSumNode();
-            var lengthSumNode = new MeasurementLengthSumNode();
+            MeasurementAreaSumNode areaSumNode = new MeasurementAreaSumNode();
+            MeasurementLengthSumNode lengthSumNode = new MeasurementLengthSumNode();
 
             // Display nodes
-            var areaDisplay = new DisplayNode();
+            DisplayNode areaDisplay = new DisplayNode();
             areaDisplay.Title = "Total Area Display";
 
-            var lengthDisplay = new DisplayNode();
+            DisplayNode lengthDisplay = new DisplayNode();
             lengthDisplay.Title = "Total Length Display";
 
             // Add nodes to graph
@@ -271,32 +268,32 @@ namespace BaklavaDependencyEngine.Console
             var graph = new Graph();
 
             // Building measurements input
-            var buildingMeasurements = new BuildingMeasurementsNode();
+            BuildingMeasurementsNode buildingMeasurements = new BuildingMeasurementsNode();
             buildingMeasurements.Title = "All Measurements";
 
             // Filter by type node
-            var filterToType = new FilterToTypeNode();
+            FilterToTypeNode filterToType = new FilterToTypeNode();
             filterToType.Title = "Filter to Wall Type";
             filterToType.Inputs["type"].Value = "Wall";
 
             // Filter by selection node
-            var filterToSelection = new FilterToSelectionNode();
+            FilterToSelectionNode filterToSelection = new FilterToSelectionNode();
             filterToSelection.Title = "Filter to Room 101";
             filterToSelection.Inputs["selectionName"].Value = "Room";
             filterToSelection.Inputs["selectionValue"].Value = "Room 101";
 
             // Sum nodes for filtered results
-            var filteredAreaSum = new MeasurementAreaSumNode();
+            MeasurementAreaSumNode filteredAreaSum = new MeasurementAreaSumNode();
             filteredAreaSum.Title = "Wall Area Sum";
 
-            var roomAreaSum = new MeasurementAreaSumNode();
+            MeasurementAreaSumNode roomAreaSum = new MeasurementAreaSumNode();
             roomAreaSum.Title = "Room 101 Area Sum";
 
             // Display nodes
-            var wallAreaDisplay = new DisplayNode();
+            DisplayNode wallAreaDisplay = new DisplayNode();
             wallAreaDisplay.Title = "Total Wall Area";
 
-            var roomAreaDisplay = new DisplayNode();
+            DisplayNode roomAreaDisplay = new DisplayNode();
             roomAreaDisplay.Title = "Total Room 101 Area";
 
             // Add nodes to graph
@@ -341,20 +338,20 @@ namespace BaklavaDependencyEngine.Console
         static void DemonstrateSerializer(Graph graph)
         {
             // Use V3 serializer with JsonSubTypes
-            var serializer = new GraphSerializerV3();
+            GraphSerializer serializer = new GraphSerializer();
 
             // Serialize the graph (with TypeScript-compatible format)
-            var json = serializer.SerializeGraph(graph, wrapInGraphFile: true);
+            string json = serializer.SerializeGraph(graph);
             System.Console.WriteLine("Graph serialized to JSON (TypeScript-compatible format):");
             System.Console.WriteLine(json.Substring(0, Math.Min(500, json.Length)) + "...\n");
 
             // Save to file
-            var fileName = "sample_graph.json";
+            string fileName = "sample_graph.json";
             File.WriteAllText(fileName, json);
             System.Console.WriteLine($"Graph saved to {fileName}");
 
             // Load and deserialize
-            var loadedJson = File.ReadAllText(fileName);
+            string loadedJson = File.ReadAllText(fileName);
             try
             {
                 var loadedGraph = serializer.DeserializeGraph(loadedJson);
