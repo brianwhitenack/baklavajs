@@ -1,0 +1,154 @@
+{
+  "Graph": {
+    "Id": "142c8161-f3ea-4b2a-9465-d68c747c35bd",
+    "Nodes": [
+      {
+        "Id": "dbe852dc-f85d-4dc9-9c4d-4178b3d8d352",
+        "Type": "NumberNode",
+        "Title": "Number 1",
+        "Inputs": {},
+        "Outputs": {
+          "value": {
+            "Id": "93595ab2-d771-472b-95f8-10b608911dfe",
+            "Name": "Value",
+            "Value": 10.0,
+            "AllowMultipleConnections": false,
+            "IsInput": false
+          }
+        }
+      },
+      {
+        "Id": "6b68e36b-0030-4b23-9835-0c9bc315932d",
+        "Type": "NumberNode",
+        "Title": "Number 2",
+        "Inputs": {},
+        "Outputs": {
+          "value": {
+            "Id": "a6b0a819-80f7-4f83-9949-c7394604a32e",
+            "Name": "Value",
+            "Value": 5.0,
+            "AllowMultipleConnections": false,
+            "IsInput": false
+          }
+        }
+      },
+      {
+        "Id": "0cc05521-c6ba-47d9-bb5c-5c1807a1f2d4",
+        "Type": "MathNode",
+        "Title": "Add",
+        "Inputs": {
+          "number1": {
+            "Id": "10f38fc9-fabc-4423-adee-18098af52e8a",
+            "Name": "Number 1",
+            "Value": 0.0,
+            "AllowMultipleConnections": false,
+            "IsInput": true
+          },
+          "number2": {
+            "Id": "87dd2550-2971-4786-ba5c-04fe49dcecc3",
+            "Name": "Number 2",
+            "Value": 0.0,
+            "AllowMultipleConnections": false,
+            "IsInput": true
+          }
+        },
+        "Outputs": {
+          "result": {
+            "Id": "656b5cdf-bb1f-40bc-891a-03ce7ed32911",
+            "Name": "Result",
+            "Value": 0.0,
+            "AllowMultipleConnections": false,
+            "IsInput": false
+          }
+        }
+      },
+      {
+        "Id": "64bdc676-97dc-42c1-a04e-52dc54fc04ca",
+        "Type": "MathNode",
+        "Title": "Multiply by 2",
+        "Inputs": {
+          "number1": {
+            "Id": "472ae256-99fb-4c57-a5d7-991b30fa8193",
+            "Name": "Number 1",
+            "Value": 0.0,
+            "AllowMultipleConnections": false,
+            "IsInput": true
+          },
+          "number2": {
+            "Id": "4fb27bf0-db25-4104-a435-43c2742765b1",
+            "Name": "Number 2",
+            "Value": 0.0,
+            "AllowMultipleConnections": false,
+            "IsInput": true
+          }
+        },
+        "Outputs": {
+          "result": {
+            "Id": "0b108beb-1fc8-455f-a135-1528ed80c29c",
+            "Name": "Result",
+            "Value": 0.0,
+            "AllowMultipleConnections": false,
+            "IsInput": false
+          }
+        }
+      },
+      {
+        "Id": "735c7b57-d66c-4eda-8226-b729b8cc1931",
+        "Type": "NumberNode",
+        "Title": "Multiplier",
+        "Inputs": {},
+        "Outputs": {
+          "value": {
+            "Id": "df7594a9-66e0-40ea-b96b-c267b94a2124",
+            "Name": "Value",
+            "Value": 2.0,
+            "AllowMultipleConnections": false,
+            "IsInput": false
+          }
+        }
+      },
+      {
+        "Id": "e53f65ce-d25c-487b-b407-4d068aacdae4",
+        "Type": "DisplayNode",
+        "Title": "Final Output",
+        "Inputs": {
+          "value": {
+            "Id": "5714327d-021d-4068-a8a2-d0340b77375e",
+            "Name": "Value",
+            "Value": null,
+            "AllowMultipleConnections": false,
+            "IsInput": true
+          }
+        },
+        "Outputs": {}
+      }
+    ],
+    "Connections": [
+      {
+        "Id": "ebb9f2f5-78ab-41e0-a99f-3f8c616cf05f",
+        "FromId": "93595ab2-d771-472b-95f8-10b608911dfe",
+        "ToId": "10f38fc9-fabc-4423-adee-18098af52e8a"
+      },
+      {
+        "Id": "2a5c185d-eadc-4310-99a6-3c946ff21068",
+        "FromId": "a6b0a819-80f7-4f83-9949-c7394604a32e",
+        "ToId": "87dd2550-2971-4786-ba5c-04fe49dcecc3"
+      },
+      {
+        "Id": "d22e657a-e748-4dcf-b2e2-22f1ba5e09cd",
+        "FromId": "656b5cdf-bb1f-40bc-891a-03ce7ed32911",
+        "ToId": "472ae256-99fb-4c57-a5d7-991b30fa8193"
+      },
+      {
+        "Id": "900b349c-b883-4d8c-9c62-c8a75ba292ef",
+        "FromId": "df7594a9-66e0-40ea-b96b-c267b94a2124",
+        "ToId": "4fb27bf0-db25-4104-a435-43c2742765b1"
+      },
+      {
+        "Id": "335b280f-6dc4-4d57-a9de-a0d1c23cde58",
+        "FromId": "0b108beb-1fc8-455f-a135-1528ed80c29c",
+        "ToId": "5714327d-021d-4068-a8a2-d0340b77375e"
+      }
+    ]
+  }
+}

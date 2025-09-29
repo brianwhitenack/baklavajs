@@ -24,22 +24,49 @@ namespace BaklavaDependencyEngine.Core.Serialization
             _nodeTypes[typeName] = nodeType;
         }
 
-        public string SerializeGraph(Graph graph)
+        public string SerializeGraph(Graph graph, bool wrapInGraphFile = true)
         {
-            GraphData? graphData = new GraphData
+            GraphData graphData = new GraphData
             {
                 Id = graph.Id,
                 Nodes = graph.Nodes.Select(SerializeNode).ToList(),
                 Connections = graph.Connections.Select(SerializeConnection).ToList()
             };
 
+            if (wrapInGraphFile)
+            {
+                var graphFile = new GraphFile(graphData);
+                return JsonConvert.SerializeObject(graphFile, Formatting.Indented);
+            }
+
             return JsonConvert.SerializeObject(graphData, Formatting.Indented);
         }
 
         public Graph DeserializeGraph(string json)
         {
-            GraphData? graphData = JsonConvert.DeserializeObject<GraphFile>(json)?.Graph;
-            Graph? graph = new Graph { Id = graphData.Id };
+            GraphData? graphData = null;
+
+            // Try to deserialize as GraphFile first (TypeScript format)
+            try
+            {
+                var graphFile = JsonConvert.DeserializeObject<GraphFile>(json);
+                if (graphFile?.Graph != null)
+                {
+                    graphData = graphFile.Graph;
+                }
+            }
+            catch
+            {
+                // If that fails, try direct GraphData format
+                graphData = JsonConvert.DeserializeObject<GraphData>(json);
+            }
+
+            if (graphData == null)
+            {
+                throw new InvalidOperationException("Unable to deserialize graph data");
+            }
+
+            Graph graph = new Graph { Id = graphData.Id };
 
             // Create nodes
             Dictionary<string, Node>? nodeMap = new Dictionary<string, Node>();
@@ -141,10 +168,20 @@ namespace BaklavaDependencyEngine.Core.Serialization
         }
     }
 
+    // Wrapper class to match TypeScript format
     public class GraphFile
     {
         public GraphData Graph { get; set; }
-        // template
+
+        public GraphFile()
+        {
+            Graph = new GraphData();
+        }
+
+        public GraphFile(GraphData graph)
+        {
+            Graph = graph;
+        }
     }
 
     // Data classes for serialization

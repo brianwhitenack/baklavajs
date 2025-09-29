@@ -2,6 +2,8 @@
 node_modules
 dist
 lib
+bin/
+obj/
 
 # local env files
 .env.local

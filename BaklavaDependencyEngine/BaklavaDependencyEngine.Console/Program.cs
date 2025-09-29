@@ -22,7 +22,20 @@ namespace BaklavaDependencyEngine.Console
             }
             else
             {
-                graph = CreateSampleGraph();
+                System.Console.WriteLine("Choose sample graph:");
+                System.Console.WriteLine("1. Basic Math Sample (default)");
+                System.Console.WriteLine("2. Part Creation Sample");
+                System.Console.WriteLine("3. Building Measurements Sample");
+                System.Console.WriteLine("4. Filter Nodes Sample");
+                var choice = System.Console.ReadLine();
+
+                graph = choice switch
+                {
+                    "2" => CreatePartSampleGraph(),
+                    "3" => CreateBuildingMeasurementGraph(),
+                    "4" => CreateFilterSampleGraph(),
+                    _ => CreateSampleGraph()
+                };
             }
 
             System.Console.WriteLine("Baklava Dependency Engine - C# Implementation");
@@ -78,16 +91,25 @@ namespace BaklavaDependencyEngine.Console
             System.Console.WriteLine("\n=== Serialization Demo ===");
             DemonstrateSerializer(graph);
 
-            System.Console.WriteLine("\nPress any key to exit...");
-            System.Console.ReadKey();
+            // Only wait for key if in interactive mode
+            if (System.Console.IsInputRedirected == false)
+            {
+                System.Console.WriteLine("\nPress any key to exit...");
+                System.Console.ReadKey();
+            }
         }
 
         private static async Task<Graph> LoadGraphFromFile(string path)
         {
             string graphJson = await File.ReadAllTextAsync(path);
-            GraphSerializer graphSerializer = new GraphSerializer();
+
+            // Use V3 serializer with JsonSubTypes
+            var graphSerializer = new GraphSerializerV3();
             return graphSerializer.DeserializeGraph(graphJson);
         }
+
+        // No longer needed with V2 serializer - types are discovered automatically
+        // private static void RegisterNodeTypes(GraphSerializer serializer)
 
         static Graph CreateSampleGraph()
         {
@@ -154,18 +176,176 @@ namespace BaklavaDependencyEngine.Console
             return graph;
         }
 
+        static Graph CreatePartSampleGraph()
+        {
+            var graph = new Graph();
+
+            // Create Part Creation nodes
+            var skuVar = new StringVariableNode();
+            skuVar.Outputs["result"].Value = "ABC-123";
+            skuVar.Title = "SKU Variable";
+
+            var descVar = new StringVariableNode();
+            descVar.Outputs["result"].Value = "Sample Component";
+            descVar.Title = "Description Variable";
+
+            var pkgVar = new StringVariableNode();
+            pkgVar.Outputs["result"].Value = "Standard Package";
+            pkgVar.Title = "Package Variable";
+
+            var qtyVar = new NumberVariableNode();
+            qtyVar.Outputs["result"].Value = 10.0;
+            qtyVar.Title = "Quantity Variable";
+
+            var createPartNode = new CreatePartNode();
+            var outputNode = new PartCalculationOutputNode();
+
+            // Add all nodes
+            graph.AddNode(skuVar);
+            graph.AddNode(descVar);
+            graph.AddNode(pkgVar);
+            graph.AddNode(qtyVar);
+            graph.AddNode(createPartNode);
+            graph.AddNode(outputNode);
+
+            // Create connections
+            graph.AddConnection(new Connection(skuVar.Outputs["result"], createPartNode.Inputs["sku"]));
+            graph.AddConnection(new Connection(descVar.Outputs["result"], createPartNode.Inputs["description"]));
+            graph.AddConnection(new Connection(pkgVar.Outputs["result"], createPartNode.Inputs["package"]));
+            graph.AddConnection(new Connection(qtyVar.Outputs["result"], createPartNode.Inputs["quantity"]));
+
+            // Note: This would normally connect to partListType, but for demo we'll assume the conversion works
+            graph.AddConnection(new Connection(createPartNode.Outputs["part"], outputNode.Inputs["parts"]));
+
+            return graph;
+        }
+
+        static Graph CreateBuildingMeasurementGraph()
+        {
+            var graph = new Graph();
+
+            // Building measurements input
+            var buildingMeasurements = new BuildingMeasurementsNode();
+
+            // Sum nodes
+            var areaSumNode = new MeasurementAreaSumNode();
+            var lengthSumNode = new MeasurementLengthSumNode();
+
+            // Display nodes
+            var areaDisplay = new DisplayNode();
+            areaDisplay.Title = "Total Area Display";
+
+            var lengthDisplay = new DisplayNode();
+            lengthDisplay.Title = "Total Length Display";
+
+            // Add nodes to graph
+            graph.AddNode(buildingMeasurements);
+            graph.AddNode(areaSumNode);
+            graph.AddNode(lengthSumNode);
+            graph.AddNode(areaDisplay);
+            graph.AddNode(lengthDisplay);
+
+            // Connect measurements to sum nodes
+            graph.AddConnection(new Connection(
+                buildingMeasurements.Outputs["measurements"],
+                areaSumNode.Inputs["measurements"]));
+
+            graph.AddConnection(new Connection(
+                buildingMeasurements.Outputs["measurements"],
+                lengthSumNode.Inputs["measurements"]));
+
+            // Connect sums to displays
+            graph.AddConnection(new Connection(
+                areaSumNode.Outputs["areaSum"],
+                areaDisplay.Inputs["value"]));
+
+            graph.AddConnection(new Connection(
+                lengthSumNode.Outputs["lengthSum"],
+                lengthDisplay.Inputs["value"]));
+
+            return graph;
+        }
+
+        static Graph CreateFilterSampleGraph()
+        {
+            var graph = new Graph();
+
+            // Building measurements input
+            var buildingMeasurements = new BuildingMeasurementsNode();
+            buildingMeasurements.Title = "All Measurements";
+
+            // Filter by type node
+            var filterToType = new FilterToTypeNode();
+            filterToType.Title = "Filter to Wall Type";
+            filterToType.Inputs["type"].Value = "Wall";
+
+            // Filter by selection node
+            var filterToSelection = new FilterToSelectionNode();
+            filterToSelection.Title = "Filter to Room 101";
+            filterToSelection.Inputs["selectionName"].Value = "Room";
+            filterToSelection.Inputs["selectionValue"].Value = "Room 101";
+
+            // Sum nodes for filtered results
+            var filteredAreaSum = new MeasurementAreaSumNode();
+            filteredAreaSum.Title = "Wall Area Sum";
+
+            var roomAreaSum = new MeasurementAreaSumNode();
+            roomAreaSum.Title = "Room 101 Area Sum";
+
+            // Display nodes
+            var wallAreaDisplay = new DisplayNode();
+            wallAreaDisplay.Title = "Total Wall Area";
+
+            var roomAreaDisplay = new DisplayNode();
+            roomAreaDisplay.Title = "Total Room 101 Area";
+
+            // Add nodes to graph
+            graph.AddNode(buildingMeasurements);
+            graph.AddNode(filterToType);
+            graph.AddNode(filterToSelection);
+            graph.AddNode(filteredAreaSum);
+            graph.AddNode(roomAreaSum);
+            graph.AddNode(wallAreaDisplay);
+            graph.AddNode(roomAreaDisplay);
+
+            // Connect measurements to filters
+            graph.AddConnection(new Connection(
+                buildingMeasurements.Outputs["measurements"],
+                filterToType.Inputs["inputMeasurements"]));
+
+            graph.AddConnection(new Connection(
+                buildingMeasurements.Outputs["measurements"],
+                filterToSelection.Inputs["inputMeasurements"]));
+
+            // Connect filtered results to sum nodes
+            graph.AddConnection(new Connection(
+                filterToType.Outputs["outputMeasurements"],
+                filteredAreaSum.Inputs["measurements"]));
+
+            graph.AddConnection(new Connection(
+                filterToSelection.Outputs["outputMeasurements"],
+                roomAreaSum.Inputs["measurements"]));
+
+            // Connect sums to displays
+            graph.AddConnection(new Connection(
+                filteredAreaSum.Outputs["areaSum"],
+                wallAreaDisplay.Inputs["value"]));
+
+            graph.AddConnection(new Connection(
+                roomAreaSum.Outputs["areaSum"],
+                roomAreaDisplay.Inputs["value"]));
+
+            return graph;
+        }
+
         static void DemonstrateSerializer(Graph graph)
         {
-            var serializer = new GraphSerializer();
+            // Use V3 serializer with JsonSubTypes
+            var serializer = new GraphSerializerV3();
 
-            // Register node types for deserialization
-            serializer.RegisterNodeType<NumberNode>("NumberNode");
-            serializer.RegisterNodeType<MathNode>("MathNode");
-            serializer.RegisterNodeType<DisplayNode>("DisplayNode");
-
-            // Serialize the graph
-            var json = serializer.SerializeGraph(graph);
-            System.Console.WriteLine("Graph serialized to JSON:");
+            // Serialize the graph (with TypeScript-compatible format)
+            var json = serializer.SerializeGraph(graph, wrapInGraphFile: true);
+            System.Console.WriteLine("Graph serialized to JSON (TypeScript-compatible format):");
             System.Console.WriteLine(json.Substring(0, Math.Min(500, json.Length)) + "...\n");
 
             // Save to file
@@ -175,8 +355,15 @@ namespace BaklavaDependencyEngine.Console
 
             // Load and deserialize
             var loadedJson = File.ReadAllText(fileName);
-            var loadedGraph = serializer.DeserializeGraph(loadedJson);
-            System.Console.WriteLine($"Graph loaded successfully. Contains {loadedGraph.Nodes.Count} nodes and {loadedGraph.Connections.Count} connections.");
+            try
+            {
+                var loadedGraph = serializer.DeserializeGraph(loadedJson);
+                System.Console.WriteLine($"Graph loaded successfully. Contains {loadedGraph.Nodes.Count} nodes and {loadedGraph.Connections.Count} connections.");
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine($"Failed to deserialize: {ex.Message}");
+            }
         }
     }
 }

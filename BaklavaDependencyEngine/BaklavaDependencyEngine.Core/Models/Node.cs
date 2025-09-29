@@ -2,9 +2,27 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using JsonSubTypes;
+using BaklavaDependencyEngine.Core.ExampleNodes;
 
 namespace BaklavaDependencyEngine.Core.Models
 {
+    [JsonConverter(typeof(JsonSubtypes), "Type")]
+    [JsonSubtypes.KnownSubType(typeof(NumberNode), "NumberNode")]
+    [JsonSubtypes.KnownSubType(typeof(MathNode), "MathNode")]
+    [JsonSubtypes.KnownSubType(typeof(DisplayNode), "DisplayNode")]
+    [JsonSubtypes.KnownSubType(typeof(StringVariableNode), "StringVariableNode")]
+    [JsonSubtypes.KnownSubType(typeof(NumberVariableNode), "NumberVariableNode")]
+    [JsonSubtypes.KnownSubType(typeof(CreatePartNode), "CreatePartNode")]
+    [JsonSubtypes.KnownSubType(typeof(PartCalculationOutputNode), "PartCalculationOutputNode")]
+    [JsonSubtypes.KnownSubType(typeof(MeasurementAreaNode), "MeasurementAreaNode")]
+    [JsonSubtypes.KnownSubType(typeof(MeasurementLengthNode), "MeasurementLengthNode")]
+    [JsonSubtypes.KnownSubType(typeof(MeasurementAreaSumNode), "MeasurementAreaSumNode")]
+    [JsonSubtypes.KnownSubType(typeof(MeasurementLengthSumNode), "MeasurementLengthSumNode")]
+    [JsonSubtypes.KnownSubType(typeof(BuildingMeasurementsNode), "BuildingMeasurementsNode")]
+    [JsonSubtypes.KnownSubType(typeof(FeatureFlagNode), "FeatureFlagNode")]
+    [JsonSubtypes.KnownSubType(typeof(FilterToTypeNode), "FilterToTypeNode")]
+    [JsonSubtypes.KnownSubType(typeof(FilterToSelectionNode), "FilterToSelectionNode")]
     public abstract class Node
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();
